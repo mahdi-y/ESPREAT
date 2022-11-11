@@ -40,4 +40,7 @@
             <!-- Recent Sales End -->
         
                     <?php include('footer.php'); ?>
+                    </body>
+
+</html>
                         
