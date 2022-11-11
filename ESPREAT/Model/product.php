@@ -3,17 +3,19 @@ class product {
     private int $idP;
     private string $nameP;
     private float $price;
+    private int $quantity;
     private string $image;
     private string $description;
     private int $fkC;
 
 
-    public function __construct(int $idP,string $nameP,float $price,string $image,string $description,int $fkC)
+    public function __construct(int $idP,string $nameP,float $price,string $image,string $description,int $fkC,int $quantity)
     {
 
     $this->idP=$idP;
     $this->nameP=$nameP;
     $this->price=$price;
+    $this->quantity=$quantity;
     $this->image=$image;
     $this->description=$description;
     $this->fkC=$fkC;
@@ -32,6 +34,10 @@ class product {
     public function getprice()
     {
         return $this->price;
+    }
+    public function getquantity()
+    {
+        return $this->quantity;
     }
     public function getimage()
     {
@@ -59,6 +65,10 @@ class product {
     public function setprice($price)
     {
         $this->price=$price;
+    }
+    public function setquantity($quantity)
+    {
+        $this->quantity=$quantity;
     }
     public function setimage($image)
     {
