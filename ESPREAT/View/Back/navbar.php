@@ -49,6 +49,14 @@
                             <a href="blank.php" class="dropdown-item">Blank Page</a>
                         </div>
                     </div>
+                    <div class="nav_item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Charity</a>
+                    <div class="dropdown-menu bg-transparent border-0">
+                    
+                            <a href="backcategories.php" class="dropdown-item">Association</a>
+                            <a href="backcategories.php" class="dropdown-item">Donation</a>
+                            </div>
+                    </div>
                 </div>
             </nav>
         </div>
