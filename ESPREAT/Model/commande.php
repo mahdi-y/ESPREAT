@@ -2,19 +2,15 @@
 class commande {
     private int $idCommande;
     private string $bloc;
-    private string $temps;
-    private int $fkClient;
-    private int $fkPanier;
+    private int $idClient;
 
 
-    public function __construct(int $idCommande,string $bloc,string $temps,int $fkClient,int $fkPanier)
+    public function __construct(int $idCommande,string $bloc,int $idClient)
     {
 
     $this->idCommande=$idCommande;
     $this->bloc=$bloc;
-    $this->temps=$temps;
-    $this->fkClient=$fkClient;
-    $this->fkPanier=$fkPanier;
+    $this->idClient=$idClient;
     }
 
     public function getidCommande()
@@ -26,19 +22,11 @@ class commande {
     {
         return $this->bloc;
     }
-    public function gettemps()
-    {
-        return $this->temps;
-    }
+
     public function getfkClient()
     {
-        return $this->fkClient;
+        return $this->idClient;
     }
-    public function getfkPanier()
-    {
-        return $this->fkPanier;
-    }
-
     public function setidCommande($idCommande)
     {
         $this->idCommande=$idCommande;
@@ -48,17 +36,9 @@ class commande {
     {
         $this->bloc=$bloc;
     }
-    public function settemps($temps)
-    {
-        $this->temps=$temps;
-    }
-    public function setfkClient($fkClient)
-    {
-        $this->fkClient=$fkClient;
-    }
-    public function setfkPanier($fkPanier)
-    {
-        $this->fkPanier=$fkPanier;
-    }
 
+    public function setfkClient($idClient)
+    {
+        $this->idClient=$idClient;
+    }
 }
