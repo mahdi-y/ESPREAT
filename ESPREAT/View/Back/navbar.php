@@ -57,6 +57,9 @@
                             <a href="backdonation.php" class="dropdown-item">Donation</a>
                             </div>
                     </div>
+                    <a href="backPointDeCollecte.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Point de collecte</a>
+
+                    </div>
                 </div>
             </nav>
         </div>
