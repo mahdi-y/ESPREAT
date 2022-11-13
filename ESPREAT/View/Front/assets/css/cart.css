@@ -56,7 +56,11 @@ a {
 }
 
 .title-style a {
-  color: #ff214f;
+  color: #f1f1f1;
+  border: 1px solid #ff214f;
+  padding: 8px;
+  background: #ff214f;
+  border-radius: 4px;
 }
 
 .mainContent {
@@ -145,11 +149,12 @@ input[type="number"] {
 }
 
 .food-image {
-  max-width: 80%;
-  max-height: 80%;
-  border: 2px solid #ffff;
-  border-radius: 35px;
+  max-width: 90%;
+  max-height: 90%;
+  border: 2px solid #ed1f24;
+  border-radius: 10px;
 }
+
 .sidenav {
   height: 100%;
   width: 0px;
@@ -157,17 +162,21 @@ input[type="number"] {
   z-index: 10000000000;
   top: 0;
   right: 0;
-  background-color: #111;
+  color: rgb(52, 58, 64);
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 0;
-  background-color: #000;
+  background: linear-gradient(
+    90deg,
+    rgba(52, 58, 64, 1) 0%,
+    rgba(37, 84, 134, 1) 100%
+  );
 }
 
 .sidenav a {
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #ed1f24;
   display: block;
   transition: 0.3s;
 }
@@ -226,46 +235,55 @@ input[type="number"] {
 }
 
 .checkout-text {
-  padding: 50px 10px 20px 5px;
+  padding: 70px 10px 20px 5px;
   color: white;
   font-family: "Roboto", sans-serif;
-
+  padding-left: 50px;
   margin: 0;
+}
+
+.input-label-name {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  padding-left: 100px;
+  margin-top: 50px;
+}
+
+.input-label-phone {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  padding-left: 120px;
+  padding-top: 20px;
 }
 input[type="text"],
 input[type="tel"] {
-  width: 70%;
-  height: 20px;
+  width: 50%;
+  height: 25px;
   background-color: white;
   border-radius: 2px;
   border: none;
   outline: 0px;
-  margin-left: 5px;
-}
-
-.input-label {
-  font-family: "Roboto", sans-serif;
-
-  color: white;
-  padding-left: 5px;
+  margin-left: 60px;
+  text-align: center;
 }
 
 .confirm-btn {
   height: 25px;
-  margin-left: 5px;
-  margin-top: 10px;
+  margin-left: 40px;
+  margin-top: 50px;
   width: 71.5%;
   background-color: #ff214f;
   border-radius: 2px;
   border: none;
   outline: 0px;
   font-family: "Roboto", sans-serif;
+  color: #f1f1f1;
 }
 .confirm-p {
   width: 50%;
-  padding: 50px 10px 20px 5px;
+  padding: 50px 20px 20px 5px;
   color: white;
   font-family: "Roboto", sans-serif;
-
   margin: 0;
+  text-align: left;
 }

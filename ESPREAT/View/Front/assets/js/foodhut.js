@@ -44,13 +44,6 @@ var drinkPrice = ["8", "7", "7", "7", "10", "12"];
 var drinkCount = ["0", "0", "0", "0", "0", "0"];
 var total = Number(0);
 
-document.onkeydown = function (evt) {
-  evt = evt || window.event;
-  if (evt.keyCode == 27) {
-    closeNav();
-  }
-};
-
 function inputNumberValueReset(dish) {
   document.getElementById("number1").value = Number(dish[0]);
   document.getElementById("number2").value = Number(dish[1]);
@@ -70,12 +63,12 @@ function menuChange(dish) {
     document.getElementById("food4").textContent = appFood[3];
     document.getElementById("food5").textContent = appFood[4];
     document.getElementById("food6").textContent = appFood[5];
-    document.getElementById("price1").textContent = appPrice[0] + "$";
-    document.getElementById("price2").textContent = appPrice[1] + "$";
-    document.getElementById("price3").textContent = appPrice[2] + "$";
-    document.getElementById("price4").textContent = appPrice[3] + "$";
-    document.getElementById("price5").textContent = appPrice[4] + "$";
-    document.getElementById("price6").textContent = appPrice[5] + "$";
+    document.getElementById("price1").textContent = appPrice[0] + "dt";
+    document.getElementById("price2").textContent = appPrice[1] + "dt";
+    document.getElementById("price3").textContent = appPrice[2] + "dt";
+    document.getElementById("price4").textContent = appPrice[3] + "dt";
+    document.getElementById("price5").textContent = appPrice[4] + "dt";
+    document.getElementById("price6").textContent = appPrice[5] + "dt";
     inputNumberValueReset(appCount);
     document.getElementById("image").src =
       "/ESPREAT/View/Front/assets/imgs/app/image1.jpg";
@@ -87,12 +80,12 @@ function menuChange(dish) {
     document.getElementById("food4").textContent = saladFood[3];
     document.getElementById("food5").textContent = saladFood[4];
     document.getElementById("food6").textContent = saladFood[5];
-    document.getElementById("price1").textContent = saladPrice[0] + "$";
-    document.getElementById("price2").textContent = saladPrice[1] + "$";
-    document.getElementById("price3").textContent = saladPrice[2] + "$";
-    document.getElementById("price4").textContent = saladPrice[3] + "$";
-    document.getElementById("price5").textContent = saladPrice[4] + "$";
-    document.getElementById("price6").textContent = saladPrice[5] + "$";
+    document.getElementById("price1").textContent = saladPrice[0] + "dt";
+    document.getElementById("price2").textContent = saladPrice[1] + "dt";
+    document.getElementById("price3").textContent = saladPrice[2] + "dt";
+    document.getElementById("price4").textContent = saladPrice[3] + "dt";
+    document.getElementById("price5").textContent = saladPrice[4] + "dt";
+    document.getElementById("price6").textContent = saladPrice[5] + "dt";
     inputNumberValueReset(saladCount);
     document.getElementById("image").src =
       "/ESPREAT/View/Front/assets/imgs/salad/image1.jpg";
@@ -104,12 +97,12 @@ function menuChange(dish) {
     document.getElementById("food4").textContent = mainFood[3];
     document.getElementById("food5").textContent = mainFood[4];
     document.getElementById("food6").textContent = mainFood[5];
-    document.getElementById("price1").textContent = mainPrice[0] + "$";
-    document.getElementById("price2").textContent = mainPrice[1] + "$";
-    document.getElementById("price3").textContent = mainPrice[2] + "$";
-    document.getElementById("price4").textContent = mainPrice[3] + "$";
-    document.getElementById("price5").textContent = mainPrice[4] + "$";
-    document.getElementById("price6").textContent = mainPrice[5] + "$";
+    document.getElementById("price1").textContent = mainPrice[0] + "dt";
+    document.getElementById("price2").textContent = mainPrice[1] + "dt";
+    document.getElementById("price3").textContent = mainPrice[2] + "dt";
+    document.getElementById("price4").textContent = mainPrice[3] + "dt";
+    document.getElementById("price5").textContent = mainPrice[4] + "dt";
+    document.getElementById("price6").textContent = mainPrice[5] + "dt";
     inputNumberValueReset(mainCount);
     document.getElementById("image").src =
       "/ESPREAT/View/Front/assets/imgs/main/image1.jpg";
@@ -121,12 +114,12 @@ function menuChange(dish) {
     document.getElementById("food4").textContent = desertFood[3];
     document.getElementById("food5").textContent = desertFood[4];
     document.getElementById("food6").textContent = desertFood[5];
-    document.getElementById("price1").textContent = desertPrice[0] + "$";
-    document.getElementById("price2").textContent = desertPrice[1] + "$";
-    document.getElementById("price3").textContent = desertPrice[2] + "$";
-    document.getElementById("price4").textContent = desertPrice[3] + "$";
-    document.getElementById("price5").textContent = desertPrice[4] + "$";
-    document.getElementById("price6").textContent = desertPrice[5] + "$";
+    document.getElementById("price1").textContent = desertPrice[0] + "dt";
+    document.getElementById("price2").textContent = desertPrice[1] + "dt";
+    document.getElementById("price3").textContent = desertPrice[2] + "dt";
+    document.getElementById("price4").textContent = desertPrice[3] + "dt";
+    document.getElementById("price5").textContent = desertPrice[4] + "dt";
+    document.getElementById("price6").textContent = desertPrice[5] + "dt";
     inputNumberValueReset(desertCount);
     document.getElementById("image").src =
       "/ESPREAT/View/Front/assets/imgs/desert/image1.jpg";
@@ -138,12 +131,12 @@ function menuChange(dish) {
     document.getElementById("food4").textContent = drinkFood[3];
     document.getElementById("food5").textContent = drinkFood[4];
     document.getElementById("food6").textContent = drinkFood[5];
-    document.getElementById("price1").textContent = drinkPrice[0] + "$";
-    document.getElementById("price2").textContent = drinkPrice[1] + "$";
-    document.getElementById("price3").textContent = drinkPrice[2] + "$";
-    document.getElementById("price4").textContent = drinkPrice[3] + "$";
-    document.getElementById("price5").textContent = drinkPrice[4] + "$";
-    document.getElementById("price6").textContent = drinkPrice[5] + "$";
+    document.getElementById("price1").textContent = drinkPrice[0] + "dt";
+    document.getElementById("price2").textContent = drinkPrice[1] + "dt";
+    document.getElementById("price3").textContent = drinkPrice[2] + "dt";
+    document.getElementById("price4").textContent = drinkPrice[3] + "dt";
+    document.getElementById("price5").textContent = drinkPrice[4] + "dt";
+    document.getElementById("price6").textContent = drinkPrice[5] + "dt";
     inputNumberValueReset(drinkCount);
     document.getElementById("image").src =
       "/ESPREAT/View/Front/assets/imgs/drink/image1.jpg";
@@ -166,27 +159,27 @@ function priceChange(food, number) {
   if (currentDish == 0) {
     appCount[food] = document.getElementById(number).value;
     totalCount();
-    document.getElementById("total").textContent = total + "$";
+    document.getElementById("total").textContent = total + "dt";
   }
   if (currentDish == 1) {
     saladCount[food] = document.getElementById(number).value;
     totalCount();
-    document.getElementById("total").textContent = total + "$";
+    document.getElementById("total").textContent = total + "dt";
   }
   if (currentDish == 2) {
     mainCount[food] = document.getElementById(number).value;
     totalCount();
-    document.getElementById("total").textContent = total + "$";
+    document.getElementById("total").textContent = total + "dt";
   }
   if (currentDish == 3) {
     desertCount[food] = document.getElementById(number).value;
     totalCount();
-    document.getElementById("total").textContent = total + "$";
+    document.getElementById("total").textContent = total + "dt";
   }
   if (currentDish == 4) {
     drinkCount[food] = document.getElementById(number).value;
     totalCount();
-    document.getElementById("total").textContent = total + "$";
+    document.getElementById("total").textContent = total + "dt";
   }
   checkoutTotal();
 }
@@ -257,7 +250,7 @@ function checkoutTotal() {
     }
   }
   if (Number(total) > 0) {
-    document.getElementById("checkout-p").innerHTML += total + "$";
+    document.getElementById("checkout-p").innerHTML += total + "dt";
   }
 }
 
@@ -269,10 +262,11 @@ function confirmOrder() {
     document.getElementById("confirm-p").innerHTML =
       "Checkout confirmed" +
       "<br>" +
-      "Your food will be delivered to" +
-      "<br>" +
+      "Nearest collection point to bloc " +
       document.getElementById("adress-input").value +
       "<br>" +
-      "Order will arrive in 45mins to 1hour";
+      "Is Djoo" +
+      "<br>" +
+      "Your order will be ready in 4 minutes";
   }
 }
