@@ -45,6 +45,8 @@
     "Liberation Mono", "Courier New", monospace;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 *,
 *::before,
 *::after {
@@ -11424,6 +11426,7 @@ th {
 
 .testmonial-card .testmonial-title {
   font-size: 1.85rem;
+  color: #ff214f;
 }
 
 .testmonial-card .testmonial-subtitle {

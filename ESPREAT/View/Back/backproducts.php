@@ -1,3 +1,15 @@
+<?php
+
+include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
+//require '..\ESPREAT\config.php';
+//require 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\Controller\crudproduct.php';
+//include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\Controller\crudproduct.php';
+//$crudproduct = new crudproduct();
+//$list = $crudproduct->listProduits();
+
+
+?>
+
 <?php include('header.php'); ?>
 <?php include('navbar.php'); ?>
 
@@ -12,26 +24,48 @@
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-white">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
+                                    
+                                    <th scope="col">name</th>
+                                    <th scope="col">price</th>
+                                    <th scope="col">quantity</th>
+                                    <th scope="col">image</th>
+                                    <th scope="col">description</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Actions</th>
+
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="productupdate.php?id=<?=$c ['idP'];?>">Update</a></td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Delete</a></td>
-                                </tr>
+
+                            <?php
+$sql="select * from `product`";
+$result=mysqli_query($con,$sql);
+if($result){
+    while($row=mysqli_fetch_assoc($result)){
+        $idP=$row['idP'];
+        $nameP=$row['nameP'];
+        $price=$row['price'];
+        $quantity=$row['quantity'];
+        $image=$row['image'];
+        $description=$row['description'];
+        $fkC=$row['fkC'];
+        echo'<tr>
+                                    
+        <td>'.$nameP.'</td>
+        <td>'.$price.' DT</td>
+        <td>'.$quantity.'</td>
+        <td>'.$image.'</td>
+        <td>'.$description.'</td>
+        <td>'.$fkC.'</td>
+
+        <td><a class="btn btn-sm btn-primary" href="updateproduct.php?updateid='.$idP.'">Update</a>
+        <a class="btn btn-sm btn-primary" href="deleteproduct.php?deleteid='.$idP.'">Delete</a></td>
+    </tr>';
+    } 
+}
+          ?>
+                                
+       
                             </tbody>
                         </table>
                     </div>
