@@ -1,44 +1,6 @@
 <?php
 include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
-/*
-include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\Controller\crudproduct.php';
 
-
-$error = "";
-
-$product = null;
-
-$crudproduct= new crudproduct();
-
-if (
-    isset($_POST["nameP"]) &&
-    isset($_POST["price"]) &&
-    isset($_POST["quantity"]) &&
-    isset($_POST["image"]) &&
-    isset($_POST["description"])
-) {
-    if (
-        !empty($_POST['nameP']) &&
-        !empty($_POST["price"]) &&
-        !empty($_POST["quantity"]) &&
-        !empty($_POST["image"]) &&
-        !empty($_POST["description"])
-    ) {
-        $product = new product(
-            null,
-            $_POST['idP'],
-            $_POST['nameP'],
-            $_POST['price'],
-            $_POST['quantity'],
-            $_POST['image'],
-            $_POST['description']
-            
-        );
-        $crudproduct->addProduct($product);
-        header('Location:backproducts.php');
-    } else
-    $error = "Missing information";
-}*/
 $idP=$_GET['updateid'];
 
 $sql="select * from `product` where idP=$idP";

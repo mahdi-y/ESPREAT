@@ -3,12 +3,7 @@ include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
 
 if (isset($_POST['submit'])) {
 
-    $nameP=$_POST['nameP'];
-    $price=$_POST['price'];
-    $quantity=$_POST['quantity'];
-    $image=$_POST['image'];
-    $description=$_POST['description'];
-    $fkC=$_POST['fkC'];
+    $nameC=$_POST['nameC'];
 
    /* if($_FILES["image"]["error"] === 4){
         echo 
@@ -35,13 +30,13 @@ if (isset($_POST['submit'])) {
 
     }
 */
-    $sql="insert into `product` (nameP,price,image,quantity,description,fkC)
-    values('$nameP','$price','$image', '$quantity','$description','$fkC')";
+    $sql="insert into `category` (nameC)
+    values('$nameC')";
 
     $result=mysqli_query($con,$sql);
     if ($result) {
        // echo "data inserted successfully";
-       header('location:backproducts.php');
+       header('location:backcategories.php');
     } else {
         die (mysqli_error($con));
     }
@@ -62,39 +57,16 @@ if (isset($_POST['submit'])) {
                             <a href="index.html" class="">
                                 
                             </a>
-                            <h3>Add product</h3>
+                            <h3>Add category</h3>
                         </div>
                         
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" name="nameP"  placeholder="name">
+                            <input type="text" class="form-control" name="nameC"  placeholder="name">
                             <label >Name</label>
                         </div>
 
-                        <div class="form-floating mb-3">
-                            <input type="float" class="form-control" name="price" placeholder="price">
-                            <label>Price</label>
-                        </div>
-                        <div class="form-floating mb-4">
-                            <input type="number" class="form-control" name="quantity" placeholder="quantity">
-                            <label >Quantity</label>
-                        </div>
-                        <div class="form-floating mb-4">
-                            <input type="text" class="form-control" name="image" placeholder="image url" accept=".jpg, .jpeg, .png">
-                            <label>Image url</label>
-                        </div>
-
-
-
-                        <div class="form-floating mb-4">
-                            <input type="description" class="form-control" name="description" placeholder="description">
-                            <label>Description</label>
-                        </div>
-                        <div class="form-floating mb-4">
-                            <input type="text" class="form-control" name="fkC" placeholder="category">
-                            <label>Category</label>
-                        </div>
                         
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4" name="submit">Add product</button>
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4" name="submit">Add category</button>
                        
                        
                     </div>
