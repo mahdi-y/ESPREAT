@@ -1,37 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="/ESPREAT/View/Front/assets/css/cart.css" />
-    <link rel="stylesheet" href="/ESPREAT/View/Front/assets/css/foodhut.css" />
-    <title>Menu</title>
-  </head>
+<?php
+
+include 'connect.php';
+
+if(isset($_POST['submit'])){
+  $bloc=$_POST['bloc'];
+  $idClient=$_POST['idClient'];
+
+  $sql="insert into `commandes`(bloc,idClient)
+  values('$bloc','$idClient')" ;
+  $result=mysqli_query($con,$sql);
+  if($result){
+    //echo "data inserted successfully";
+    header('location:listCommandes.php');
+  }else{
+    die(mysqli_error($con)); 
+  }
+}
+
+
+?>
+
+  <?php include('header.php'); ?>
   <body>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
         >&times;</a
       >
-      <form onsubmit="return confirmOrder(), false" method="post">
+      <form
+        method="post"
+        onsubmit="return confirmOrder(), false"
+      >
         <span class="textarea"
           ><p class="checkout-text" id="checkout-p"></p
         ></span>
         <div class="label-div">
-          <label class="input-label-name">Identifiant</label>
+          <label class="input-label-name" >Identifiant</label>
         </div>
-        <input type="text" class="text-input" required />
+        <input type="text" class="text-input" required name="idClient"/>
         <div class="label-div">
-          <label class="input-label-phone">Bloc</label>
+          <label class="input-label-phone" >Bloc</label>
         </div>
         <input
           id="adress-input"
           type="tel"
           class="tel-input"
-          name="phone"
           pattern="[A-M]{,1}"
           required
+          name="bloc"
         />
-        <input type="submit" value="CONFIRM" class="confirm-btn" />
+        <button type="submit"
+          value="CONFIRM"
+          class="confirm-btn"
+          name="submit">
+          
+          Confirm</button>
       </form>
       <span class="confirm-span"><p class="confirm-p" id="confirm-p"></p></span>
     </div>

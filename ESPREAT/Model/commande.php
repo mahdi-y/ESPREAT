@@ -1,5 +1,5 @@
 <?php
-class commande {
+class commandes {
     private int $idCommande;
     private string $bloc;
     private int $idClient;

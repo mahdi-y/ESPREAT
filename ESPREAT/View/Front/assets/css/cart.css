@@ -7,7 +7,6 @@ body {
 }
 
 .main-cart {
-  background-color: #333333;
   display: grid;
   grid-template-rows: 10% 90%;
   height: 100%;
