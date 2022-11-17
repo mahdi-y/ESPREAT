@@ -10,34 +10,26 @@ if (isset($_POST['submit'])) {
     $description=$_POST['description'];
     $fkC=$_POST['fkC'];
 
-   /* if($_FILES["image"]["error"] === 4){
-        echo 
-        "<script> alert('Image Does Not Exist');</script>";
-    }else{
-        $filename = $_FILES["image"]["name"];
-        $filename = $_FILES["image"]["size"];
-        $filename = $_FILES["image"]["tmp_name"];
-
-        $validImageExtension = ['jpg','jpeg','png'];
-        $imageExtension = explose('.', $filename);
-        $imageExtension = strtolower(end($imageExtension));
-        if(!in_array($imageExtension, $validImageExtension)){
-            echo 
-        "<script> alert('Invalid image Extension');</script>";
-        }else{
-            $newImageName = uniqid();
-            $newImageName .= '.' . $imageExtension;
-
-            move_uploaded_file($tmpName, 'img/', $newImageName);
 
 
-        }
+//declaring variables
+$filename = $_FILES['fileToUpload']['name'];
+$filetmpname = $_FILES['fileToUpload']['tmp_name'];
+//folder where images will be uploaded
+$folder = 'img/';
+//function for saving the uploaded images in a specific folder
+move_uploaded_file($filetmpname, $folder.$filename);
+//inserting image details (ie image name) in the database
 
-    }
-*/
-    $sql="insert into `product` (nameP,price,image,quantity,description,fkC)
-    values('$nameP','$price','$image', '$quantity','$description','$fkC')";
 
+if( $result) {
+echo "</br>image uploaded"; 
+}
+$sql="insert into `product` (nameP,price,image,quantity,description,fkC)
+    values('$nameP','$price','$filename', '$quantity','$description','$fkC')";
+
+
+    
     $result=mysqli_query($con,$sql);
     if ($result) {
        // echo "data inserted successfully";
@@ -54,7 +46,7 @@ if (isset($_POST['submit'])) {
 <?php include('navbar.php'); ?>
 
 <div class="container-fluid">
-<form method="post">
+<form method="post" enctype="multipart/form-data">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
@@ -71,16 +63,18 @@ if (isset($_POST['submit'])) {
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="float" class="form-control" name="price" placeholder="price">
+                            <input type="number" class="form-control" name="price" placeholder="price" min="0">
                             <label>Price</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="number" class="form-control" name="quantity" placeholder="quantity">
+                            <input type="number" class="form-control" 
+                            name="quantity" placeholder="quantity"
+                            min="0">
                             <label >Quantity</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="text" class="form-control" name="image" placeholder="image url" accept=".jpg, .jpeg, .png">
-                            <label>Image url</label>
+                            <input type="file" class="form-control" name="fileToUpload" placeholder="image" id="fileToUpload">
+                            <label>Image</label>
                         </div>
 
 

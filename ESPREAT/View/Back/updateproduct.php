@@ -23,7 +23,25 @@ if (isset($_POST['submit'])) {
     $description=$_POST['description'];
     $fkC=$_POST['fkC'];
 
-    $sql="update `product` set idP=$idP,nameP='$nameP',price='$price',image='$image',quantity='$quantity',description='$description',fkC='$fkC' where idP=$idP";
+
+   
+//declaring variables
+$filename = $_FILES['fileToUpload']['name'];
+$filetmpname = $_FILES['fileToUpload']['tmp_name'];
+//folder where images will be uploaded
+$folder = 'img/';
+//function for saving the uploaded images in a specific folder
+move_uploaded_file($filetmpname, $folder.$filename);
+//inserting image details (ie image name) in the database
+
+
+if( $result) {
+echo "</br>image uploaded"; 
+}
+
+
+$sql="update `product` set idP=$idP,nameP='$nameP',price='$price',image='$filename',quantity='$quantity',description='$description',fkC='$fkC' where idP=$idP";
+
 
     $result=mysqli_query($con,$sql);
     if ($result) {
@@ -33,13 +51,14 @@ if (isset($_POST['submit'])) {
         die (mysqli_error($con));
     }
 }
+
 ?>
 
 <?php include('header.php'); ?>
 <?php include('navbar.php'); ?>
 
 <div class="container-fluid">
-<form method="post">
+<form method="post" enctype="multipart/form-data">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
@@ -63,13 +82,15 @@ if (isset($_POST['submit'])) {
                             <input type="number" class="form-control" name="quantity" placeholder="quantity" value=<?php echo $quantity; ?>>
                             <label >quantity</label>
                         </div>
+
+
                         <div class="form-floating mb-4">
-                            <input type="text" class="form-control" name="image" placeholder="image url" value=<?php echo $image; ?>>
-                            <label>image url</label>
+                            <input type="file" class="form-control" name="fileToUpload" placeholder="image" id="fileToUpload" value=img/<?php echo $image; ?> >
+                            <label>Image</label>
                         </div>
 
 
-
+                        
                         <div class="form-floating mb-4">
                             <input type="description" class="form-control" name="description" placeholder="description" value=<?php echo $description; ?>>
                             <label>description</label>

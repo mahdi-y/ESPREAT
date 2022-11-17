@@ -11,8 +11,13 @@ include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
 <!-- Recent Sales Start -->
 <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
+                    
                     <div class="d-flex align-items-center justify-content-between mb-4">
+                    
                         <h6 class="mb-0">Products</h6>
+                        <form class="d-none d-md-flex ms-4">
+                    <input class="form-control bg-dark border-0" type="search" id="search" placeholder="Search">
+                </form>
                         <a href="addproduct.php">Add product</a>
                     </div>
                     <div class="table-responsive">
@@ -30,7 +35,8 @@ include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
 
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="output">
+
 
                             <?php
 $sql="select * from `product`";
@@ -45,12 +51,12 @@ if($result){
         $description=$row['description'];
         $fkC=$row['fkC'];
         echo'<tr>
-                                    
+                                 
         <td>'.$nameP.'</td>
         <td>'.$price.' DT</td>
         <td>'.$quantity.'</td>
-        <td>'.$image.'</td>
-        <td>'.$description.'</td>
+        <td><img height="80" width="80" src="img/'.$image.' " alt=""> </td> 
+        <td>'.$description.'</td> 
         <td>'.$fkC.'</td>
 
         <td><a class="btn btn-sm btn-primary" href="updateproduct.php?updateid='.$idP.'">Update</a>
@@ -59,6 +65,8 @@ if($result){
     } 
 }
           ?>
+
+
                                 
        
                             </tbody>
@@ -69,7 +77,29 @@ if($result){
             <!-- Recent Sales End -->
         
                     <?php include('footer.php'); ?>
-                    </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#search").keypress(function(){
+      $.ajax({
+        type:'POST',
+        url:'searchProducts.php',
+        data:{
+          nameP:$("#search").val(),
+        },
+        success:function(data){
+          $("#output").html(data);
+        }
+      });
+    });
+  });
+</script>
+
+</body>
 
 </html>
                         
