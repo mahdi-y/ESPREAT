@@ -19,7 +19,7 @@
                             <label for="floatingText">nom</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="numero">
+                            <input type="number" class="form-control" id="floatingText" placeholder="jhondoe" name="numero">
                             <label for="floatingText">numero</label>
                         </div>
                         

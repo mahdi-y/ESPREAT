@@ -15,7 +15,7 @@
                         </div>
                         <form action="adddonation.php" method ="post">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="idClient">
+                            <input type="number" class="form-control" id="floatingText" placeholder="jhondoe" name="idClient">
                             <label for="floatingText">idClient</label>
                         </div>
                         <div class="form-floating mb-3">
@@ -27,11 +27,11 @@
                             <label for="floatingText">sexe</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="montant">
+                            <input type="number" class="form-control" id="floatingText" placeholder="jhondoe" name="montant">
                             <label for="floatingText">montant</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="anonymat">
+                            <input type="number" class="form-control" id="floatingText" placeholder="(0:oui , 1:non)" name="anonymat">
                             <label for="floatingText">anonymat</label>
                         </div>
                         
