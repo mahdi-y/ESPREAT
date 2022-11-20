@@ -29,6 +29,7 @@ $sql="insert into `product` (nameP,price,image,quantity,description,fkC)
     values('$nameP','$price','$filename', '$quantity','$description','$fkC')";
 
 
+
     
     $result=mysqli_query($con,$sql);
     if ($result) {
@@ -83,11 +84,28 @@ $sql="insert into `product` (nameP,price,image,quantity,description,fkC)
                             <input type="description" class="form-control" name="description" placeholder="description">
                             <label>Description</label>
                         </div>
+
+
                         <div class="form-floating mb-4">
-                            <input type="text" class="form-control" name="fkC" placeholder="category">
-                            <label>Category</label>
-                        </div>
                         
+                        
+<?php
+                        if($r_set = $con->query("SELECT * from category")){
+
+echo "<select idC=idC nameC=nameC class='form-control' style='width:256px;' name='fkC'>";
+
+while ($row = $r_set->fetch_assoc()) {
+echo "<option value=$row[idC]>$row[nameC]</option>";
+}
+echo "</select>";
+}else{
+echo $connection->error;
+}
+?>
+<label>Category</label>
+</div>
+<br>
+
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4" name="submit">Add product</button>
                        
                        
