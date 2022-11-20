@@ -54,7 +54,7 @@
                     <div class="dropdown-menu bg-transparent border-0">
                     
                             <a href="backtab.php" class="dropdown-item">Association</a>
-                            <a href="backdonation.php" class="dropdown-item">Donation</a>
+                            <a href="backtabdonation.php" class="dropdown-item">Donation</a>
                             </div>
                     </div>
                     <a href="backPointDeCollecte.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Point de collecte</a>

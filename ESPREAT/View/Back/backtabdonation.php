@@ -7,37 +7,46 @@
 <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Associations</h6>
-                        <a href="backassociation.php">Add association</a>
+                        <h6 class="mb-0">donations</h6>
+                        <a href="backdonation.php">Add donation</a>
                     </div>
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-white">
                                     
-                                    <th scope="col">nom</th>
-                                    <th scope="col">numero</th>
+                                    <th scope="col">id Client</th>
+                                    <th scope="col">classe</th>
+                                    <th scope="col">sexe</th>
+                                    <th scope="col">motant</th>
+                                    <th scope="col">anonymat</th>
+                                    
                                     
                                     
                                 </tr>
                             </thead>
                             <tbody>
                             <?php
-                                    $sql = "Select * from association ";
+                                    $sql = "Select * from donation ";
                                     $result=mysqli_query($conn,$sql);
                                     if($result){
-                                        while($row=mysqli_fetch_assoc($result)){
+                                        while($row=mysqli_fetch_donat($result)){
                                             
-                                            $numero=$row['numero'];
-                                            $nom=$row['nom'];
-                                            $idA=$row['idA'];
+                                            $idClient=$row['idClient'];
+                                            $classe=$row['classe'];
+                                            $gender=$row['gender'];
+                                            $montant=$row['montant'];
+                                            $anonymat=$row['anonymat'];
                                             echo'  <tr>
                                             
-                                            <td>'.$nom.'</td>
-                                            <td>'.$numero.'</td>
+                                            <td>'.$idClient.'</td>
+                                            <td>'.$classe.'</td>
+                                            <td>'.$gender.'</td>
+                                            <td>'.$montant.'</td>
+                                            <td>'.$anonymat.'</td>
                                             
                                         <td><a class="btn btn-sm btn-primary" href="">Update</a> </td>
-                                        <td> <a class="btn btn-sm btn-primary" href="delete.php?deleteid='.$idA.'">Delete</a></td>
+                                        <td> <a class="btn btn-sm btn-primary" href="deletedonation.php?deleteid='.$idClient.'">Delete</a></td>
                                             </tr>';
 
                                         }

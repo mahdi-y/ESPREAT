@@ -1,45 +1,52 @@
 <?php include('header.php'); ?>
 <?php include('navbar.php'); ?>
+<?php include('functions.php'); ?>
+
 
 <!-- Recent Sales Start -->
-<div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Donations</h6>
-                        <a href="addproduct.php">Add donation</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-white">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">idClient</th>
-                                    <th scope="col">classe</th>
-                                    <th scope="col">gender</th>
-                                    <th scope="col">montant TND</th>
-                                    <th scope="col">idDon</th>
-                                    <th scope="col">anonymat</th>
-                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>1454785</td>
-                                    <td>2A2</td>
-                                    <td>0</td>
-                                    <td>55</td>
-                                    <td>552457</td>
-                                    <td>0</td>
-                            
-                                    <td><a class="btn btn-sm btn-primary" href="productupdate.php?id=<?=$c ['idP'];?>">Update</a></td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Delete</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+<div class="container-fluid">
+            <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                    <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <a href="index.html" class="">
+                            </a>
+                            <h3>add donation</h3>
+                        </div>
+                        <form action="adddonation.php" method ="post">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="nom">
+                            <label for="floatingText">idClient</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="numero">
+                            <label for="floatingText">classe</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="numero">
+                            <label for="floatingText">sexe</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="numero">
+                            <label for="floatingText">montant</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="numero">
+                            <label for="floatingText">anonymat</label>
+                        </div>
+                        
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="form-check">
+                       
+                        <button type="submit" name="submit" class="btn btn-primary py-3 w-100 mb-4">add donation</button>
+                        
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Sign Up End -->
+    </div>
+
             <!-- Recent Sales End -->
         
                     <?php include('footer.php'); ?>

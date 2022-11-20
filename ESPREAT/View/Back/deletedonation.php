@@ -19,7 +19,7 @@ if(isset($_GET['deleteid'])){
     
 }
 
-$c= new crudassociation();
-    $c->deleteassociation($idA);
-    echo "<script>location.href='backtab.php';</script>";
+$c= new cruddonation();
+    $c->deletedonation($idClient);
+    echo "<script>location.href='backtabdonation.php';</script>";
 ?>

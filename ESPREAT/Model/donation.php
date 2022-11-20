@@ -5,19 +5,19 @@ class donation {
     private string $classe;
     private int $gender;
     private int $montant;
-    private int $idMontant;
+    
     private int $anonymat;
 
 
     public function __construct(int $montant, int $idclient , string $classe,
-    int $gender , int $idMontant, int $anonymat)
+    int $gender , int $anonymat)
     {
 
     $this->montant=$montant;
     $this->idClient=$idClient;
     $this->classe=$classe;
     $this->gender=$gender;
-    $this->idMontant=$idMontant;
+    
     $this->anonymat=$anonymat;
     
 
@@ -39,10 +39,7 @@ class donation {
     {
         return $this->gender;
     }
-    public function getidMontant()
-    {
-        return $this->idMontant;
-    }
+   
     public function getanonymat()
     {
         return $this->anonymat;
@@ -63,10 +60,7 @@ class donation {
     {
         $this->gender=$gender;
     }
-    public function setiidMontant($idMontant)
-    {
-        $this->idMontant=$idMontant;
-    }
+    
     public function setanonymat($anonymat)
     {
         $this->anonymat=$anonymat;
