@@ -1,10 +1,10 @@
 <?php
 include 'D:\xamp\htdocs\web\ESPREAT\ESPREAT\View\Back\connect.php';
-include 'D:\xamp\htdocs\web\ESPREAT\ESPREAT\Controller\crudAssociation.php';
+include 'D:\xamp\htdocs\web\ESPREAT\ESPREAT\Controller\crudDonation.php';
 
 if(isset($_GET['deleteid'])){
 
-   $idA=$_GET['deleteid'];
+   $idClient=$_GET['deleteid'];
    /* $sql="delete from `association` where idA=$idA";
     $result=mysqli_query($con,$sql);
     if($result){
@@ -19,7 +19,7 @@ if(isset($_GET['deleteid'])){
     
 }
 
-$c= new cruddonation();
+$c= new crudDonation();
     $c->deletedonation($idClient);
     echo "<script>location.href='backtabdonation.php';</script>";
 ?>

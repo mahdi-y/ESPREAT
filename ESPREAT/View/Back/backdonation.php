@@ -15,23 +15,23 @@
                         </div>
                         <form action="adddonation.php" method ="post">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="nom">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="idClient">
                             <label for="floatingText">idClient</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="numero">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="classe">
                             <label for="floatingText">classe</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="numero">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="gender">
                             <label for="floatingText">sexe</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="numero">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="montant">
                             <label for="floatingText">montant</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="numero">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="anonymat">
                             <label for="floatingText">anonymat</label>
                         </div>
                         

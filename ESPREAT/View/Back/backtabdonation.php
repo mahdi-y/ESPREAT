@@ -30,7 +30,7 @@
                                     $sql = "Select * from donation ";
                                     $result=mysqli_query($conn,$sql);
                                     if($result){
-                                        while($row=mysqli_fetch_donat($result)){
+                                        while($row=mysqli_fetch_assoc($result)){
                                             
                                             $idClient=$row['idClient'];
                                             $classe=$row['classe'];
