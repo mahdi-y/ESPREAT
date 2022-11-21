@@ -1,8 +1,7 @@
+
+
 <?php
-
 include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -154,14 +153,26 @@ if($result){
         $image=$row['image'];
         $description=$row['description'];
         $fkC=$row['fkC'];
-        echo'<tr>
+        echo'<div >
+        <table align="center" class="table-center">
+        <tr>
                                  
         
-        <td><img height="300" width="300" src="img/'.$image.' " alt=""> </td>
+        <td><img height="300" width="300" src="../Back/img/'.$image.' " alt=""></td>
+        </tr>
+        <tr>
         <td>'.$price.' DT</td>
+      
+        </tr>
+          <br>
+        <tr>
         <td>'.$nameP.'</td>
+        </tr>
+        <tr>
         <td>'.$description.'</td> 
-    </tr>';
+    </tr>
+    </table>
+    </div>';
     } 
 }
           ?>
