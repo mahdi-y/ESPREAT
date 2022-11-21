@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -55,6 +56,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#book-table">Collection Point</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="listeassociation.php">Les Associations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../Back/backtab.php">Admin space</a>
           </li>
         </ul>
         <a class="navbar-brand m-auto" href="#">

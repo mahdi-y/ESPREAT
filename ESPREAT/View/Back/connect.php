@@ -1,12 +1,12 @@
 <?php
+$serverName ="localhost";
+$dBUsername ="root";
+$dBPassword="";
+$dBName ="espreat";
 
-$con=new mysqli('localhost','root','','offre');
 
-if($con){
-    echo"connection successfull";
-}else{
-    die(mysqli_error($con));
+$conn = mysqli_connect ($serverName,$dBUsername,$dBPassword,$dBName);
+
+if(!$conn) {
+    die("connection failed :" .mysqli_connect_error());
 }
-
-
-?>
