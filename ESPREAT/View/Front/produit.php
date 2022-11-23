@@ -153,35 +153,68 @@ if($result){
         $image=$row['image'];
         $description=$row['description'];
         $fkC=$row['fkC'];
-        echo'<div >
-        <table align="center" class="table-center">
-        <tr>
-                                 
+        echo'
         
-        <td><img height="300" width="300" src="../Back/img/'.$image.' " alt=""></td>
-        </tr>
-        <tr>
-        <td>'.$price.' DT</td>
-      
-        </tr>
-          <br>
-        <tr>
-        <td>'.$nameP.'</td>
-        </tr>
-        <tr>
-        <td>'.$description.'</td> 
-    </tr>
-    </table>
-    </div>';
-    } 
-}
-          ?>
+        
+        <div class="tab-content" id="pills-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="foods"
+          role="tabpanel"
+          aria-labelledby="pills-home-tab">
 
+          <div class="row">
+          
+          
+              <div class="card bg-transparent border my-3 my-md-0">
 
-                                
-       
-                            </tbody>
-                        </table>
-                    </div>
+              <div class="container">
+        
+
+             <img height="300" width="345" src="../Back/img/'.$image.' " alt=""
+             class="rounded-0 card-img-top mg-responsive">
+              
+                <div class="card-body">
+                 <h1 class="text-center mb-4">
+                    <a href="#" class="badge badge-primary">'.$price.' DT</a>
+                  </h1>
+                  <h4 class="pt20 pb20">'.$nameP.'</h4>
+              <p class="text-white">
+                  '.$description.'
+                  </p>
+                  
                 </div>
-            </div>
+              </div>
+            </div>'; 
+          
+          } 
+        }
+                  ?>
+        
+        
+                                        
+               
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
+   

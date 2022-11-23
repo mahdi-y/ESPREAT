@@ -47,7 +47,7 @@ $sql="insert into `product` (nameP,price,image,quantity,description,fkC)
 <?php include('navbar.php'); ?>
 
 <div class="container-fluid">
-<form method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data" autocomplete="off">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
@@ -59,29 +59,29 @@ $sql="insert into `product` (nameP,price,image,quantity,description,fkC)
                         </div>
                         
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" name="nameP"  placeholder="name">
+                            <input type="text" class="form-control" name="nameP"  placeholder="name" required/>
                             <label >Name</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="number" class="form-control" name="price" placeholder="price" min="0">
+                            <input type="number" class="form-control" name="price" placeholder="price" min="0"required/>
                             <label>Price</label>
                         </div>
                         <div class="form-floating mb-4">
                             <input type="number" class="form-control" 
                             name="quantity" placeholder="quantity"
-                            min="0">
+                            min="0"required/>
                             <label >Quantity</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="file" class="form-control" name="fileToUpload" placeholder="image" id="fileToUpload">
+                            <input type="file" class="form-control" name="fileToUpload" placeholder="image" id="fileToUpload"required/>
                             <label>Image</label>
                         </div>
 
 
 
                         <div class="form-floating mb-4">
-                            <input type="description" class="form-control" name="description" placeholder="description">
+                            <input type="description" class="form-control" name="description" placeholder="description"required/>
                             <label>Description</label>
                         </div>
 
