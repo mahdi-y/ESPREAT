@@ -1,5 +1,25 @@
 <?php include('connect.php'); ?>
 <?php include('header.php'); ?>
+<?php
+
+$idProduit=$_GET['updateidProduit'];
+
+if(isset($_POST['update'])){
+    $ipAddress=$_POST['ipAddress'];
+    $quantity=$_POST['quantity'];
+
+    $sql="update `panier` set idProduit=$idProduit,ipAddress='$ipAddress',quantity='$quantity'
+    where idProduit=$idProduit";
+    $result=mysqli_query($con,$sql);
+    if($result){
+      //echo "updated successfully";
+      header('location:cart.php');
+    }else{
+      die(mysqli_error($con)); 
+    }
+  }
+
+  ?>
 <body>
 <div class="header-cart">
         <nav
@@ -68,8 +88,7 @@
       <form class="d-none d-md-flex ms-4">
                     <input class="form-control bg-dark border-0" type="search" id="search" placeholder="Search">
                 </form>
-                <div class="container">
-        <form method="post">
+      <div class="container">
           <p style="margin-top: 250px; font-size: 40px; color: crimson;   " >Cart Items</p>
           <table class="table table-bordered">
             <thead>
@@ -98,7 +117,8 @@
                     <button class="btn btn-success ml-xl-4"><a href="updateProduit.php?
                     updateidProduit='.$idProduit.'"
                     class="text-white">Update</a></button>
-                    <button class="btn btn-danger ml-xl-4"><a href="deleteCart.php?deleteidProduit='.$idProduit.'"
+                    <button class="btn btn-danger ml-xl-4"><a href="deleteProduit.php?
+                    deleteidProduit='.$idProduit.'"
                     class="text-white">Delete</a></button>
                     </td>
                   </tr>';
@@ -109,7 +129,6 @@
              
             </tbody>
           </table>
-        </form>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

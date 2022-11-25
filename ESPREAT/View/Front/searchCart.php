@@ -12,7 +12,6 @@ if(mysqli_num_rows($result1)>0){
         $idProduit=$row['idProduit'];
         $ipAddress=$row['ipAddress'];
         $quantity=$row['quantity'];
-
 		echo'<tr>
                                  
         <td>'.$idProduit.'</td>
