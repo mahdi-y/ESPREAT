@@ -1,6 +1,7 @@
 
-<?php include('assets/header.php'); ?>
-<?php include('assets/footer.php'); ?>  
+<?php include('header.php'); ?>
+<?php include('footer.php'); ?>  
+
 
 
 <body>
@@ -12,15 +13,28 @@
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <a href="index.html" class="">                         </a>
+                            <a href="index.html" class=""></a>
                             <h3>Sign In</h3>
+                            
+                            <?php require_once 'login.inc.php' ; ?>
+    <?php if(isset($_SESSION['message'])) : ?>
+        <div class="alert alert-<?=$_SESSION['msg_type']?>" >
+        <?php
+        echo $_SESSION['message'];
+        unset($_SESSION['message']);
+        ?>
+        </div> 
+        <?php endif;?>
                         </div>
+                        <form action="login.inc.php" method="post">
+                       
+
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required>
                             <label for="floatingInput">Email address</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"required>
                             <label for="floatingPassword">Password</label>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-4">
@@ -30,7 +44,8 @@
                             </div>
                             <a href="">Forgot Password</a>
                         </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
+                        <button  type ="submit" name="login"class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
+                       
                         <p class="text-center mb-0">Don't have an Account? <a href="signup.php">Sign Up</a></p>
                     </div>
                 </div>
@@ -38,6 +53,10 @@
         </div>
         <!-- Sign In End -->
     </div>
+    </div>
+   
+   
+
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 <?php include('header.php'); ?>
 <?php include('navbar.php'); ?>
+<?php include('connect.php'); ?>
 
 
             <!-- Sale & Revenue Start -->
@@ -50,24 +51,48 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Worldwide Sales</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
+                        <div class="bg-secondary text-center rounded p-4"style="width:1200px">
+                            
+                            <canvas id="myChart"></canvas>
                         </div>
+                     
+                        <?php
+                        $req = mysqli_query($conn,"SELECT idClient , password FROM client");
+                        foreach($req as $data){
+                            $labels[]=$data['idClient'];
+                            $number[]=$data['password'];
+                        }
+                        ?>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: <?php echo json_encode($labels)?>,
+      datasets: [{
+        label: '# of Votes',
+        data: <?php echo json_encode($number)?>,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+ 
                     </div>
                     <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Salse & Revenue</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
-                    </div>
-                </div>
+                  
             </div>
             <!-- Sales Chart End -->
 

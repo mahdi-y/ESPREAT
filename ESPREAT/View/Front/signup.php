@@ -1,10 +1,7 @@
 
-<?php include('assets/header.php'); ?>
-<?php include('assets/footer.php'); ?>  
+<?php include('header.php'); ?>
+<?php include('footer.php'); ?>  
 
-<body>
-    <div class="container-fluid position-relative d-flex p-0">
-  
 
 
         <!-- Sign Up Start -->
@@ -16,36 +13,48 @@
                             <a href="index.html" class="">
                             </a>
                             <h3>Sign Up</h3>
+                            
+<?php require_once 'signup.inc1.php'; ?>
+
+<?php if(isset($_SESSION['message'])) : ?>
+    <div class="alert alert-<?=$_SESSION['msg_type']?>" >
+    <?php
+    echo $_SESSION['message'];
+    unset($_SESSION['message']);
+    ?>
+    </div> 
+    <?php endif;?>
+
+  
+
+                            
+                          
                         </div>
-                        <form action="connect.php" method ="post">
+                        <form action="signup.inc1.php" method ="post">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="nom">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="firstName"required>
                             <label for="floatingText">Nom</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="prenom">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="lastName"required>
                             <label for="floatingText">Prenom</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="identifiant">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="identifiant" required>
                             <label for="floatingText">Identifiant</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" >
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@esprit.tn" pattern=".+@esprit.tn" name="email"  required >
                             <label for="floatingInput">Email address</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
                             <label for="floatingPassword">Password</label>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div>
-                            <a href="">Forgot Password</a>
+                            <a href="resetpass.php">Forgot Password</a>
                         </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
+                        <button type="submit" name="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
                         <p class="text-center mb-0">Already have an Account? <a href="login.php">Sign In</a></p>
                     </div>
                 </div>
@@ -53,6 +62,7 @@
         </div>
         <!-- Sign Up End -->
     </div>
+    
 
     <?php include('footer.php'); ?>  
 </body>

@@ -1,19 +1,19 @@
 <?php
 class client {
     private int $idClient;
-    private string $nom;
-    private string $prenom;
+    private string $firstName;
+    private string $lastName;
     private string $email;
     private string $identifiant;
     private string $password;
 
 
-    public function __construct(int $idClient,string $nom,string $prenom,string $email,string $identifiant,string $password)
+    public function __construct(string $firstName,string $lastName,string $email,string $identifiant,string $password)
     {
 
-    $this->idClient=$idClient;
-    $this->nom=$nom;
-    $this->prenom=$prenom;
+    
+    $this->firstName=$firstName;
+    $this->lastName=$lastName;
     $this->email=$email;
     $this->identifiant=$identifiant;
     $this->password=$password;
@@ -21,18 +21,15 @@ class client {
   
     }
 
-    public function getidClient()
-    {
-        return $this->idClient;
-    }
+    
 
-    public function getnom()
+    public function getfirstName()
     {
-        return $this->nom;
+        return $this->firstName;
     }
-    public function getprenom()
+    public function getlastName()
     {
-        return $this->prenom;
+        return $this->lastName;
     }
     public function getemail()
     {
@@ -51,13 +48,13 @@ class client {
         $this->idClient=$idClient;
     }
 
-    public function setnom($nom)
+    public function setnom($firstName)
     {
-        $this->nom=$nom;
+        $this->firstName=$firstName;
     }
-    public function setprenom($prenom)
+    public function setprenom($lastName)
     {
-        $this->prenom=$prenom;
+        $this->lastName=$lastName;
     }
     public function setemail($email)
     {
