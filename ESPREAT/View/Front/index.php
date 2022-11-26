@@ -31,7 +31,7 @@
                 <a class="nav-link" href="#book-table">Collection Point</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="commander.html">Order</a>
+                <a class="nav-link" href="index.php">Order</a>
               </li>
             </ul>
             <a class="navbar-brand m-auto" href="#">
@@ -40,7 +40,7 @@
             </a>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="/ESPREAT/View/Front/cart.php"
+                <a class="nav-link" href="cart.php"
                   >Cart<span class="sr-only">(current)</span></a
                 >
               </li>
@@ -77,12 +77,19 @@
             $nom=$row['nom'];
             $prix=$row['prix'];
             $quantite=$row['quantite'];
-            echo "<div class='card'>
-            <h1>nom_produit : $nom</h1>
-            <p class='price'>prix : $prix dt</p>
-            <p class='quantite'>prix : $quantite unité</p>
-            <a href='index.php?add_to_cart=$idProduit' class='btn btn'>Add to cart</a>
-          </div>";
+            echo
+            "<div class='row' style='margin-top: 70px'>
+                <div class='col-md-4 mt-5'>
+                    <div class='card bg-transparent border my-1 my-md-1'>
+                        <div class='card-body'>
+                          <h1 class='text-center' >$nom</h1>
+                          <p class='badge badge-primary' >prix : $prix dt</p>
+                          <p class='quantite'>Stock : $quantite unité</p>
+                          <a href='index.php?add_to_cart=$idProduit' class='badge badge-primary'>Add to cart</a>
+                      </div>
+                    </div>  
+                </div>
+            </div>";
         }
         function getIPAddress() {  
             //whether ip is from the share internet  

@@ -8,8 +8,7 @@ if(isset($_POST['update'])){
     $ipAddress=$_POST['ipAddress'];
     $quantity=$_POST['quantity'];
 
-    $sql="update `panier` set idProduit=$idProduit,ipAddress='$ipAddress',quantity='$quantity'
-    where idProduit=$idProduit";
+    $sql="update `panier` set idProduit=$idProduit,ipAddress='$ipAddress',quantity='$quantity' where idProduit=$idProduit";
     $result=mysqli_query($con,$sql);
     if($result){
       //echo "updated successfully";

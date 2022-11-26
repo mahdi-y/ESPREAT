@@ -30,7 +30,7 @@
                 <a class="nav-link" href="#book-table">Collection Point</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="commander.html">Order</a>
+                <a class="nav-link" href="index.php">Order</a>
               </li>
             </ul>
             <a class="navbar-brand m-auto" href="#">
