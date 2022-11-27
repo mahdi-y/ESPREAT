@@ -1,7 +1,7 @@
 <?php
 
-include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
-
+session_start();
+include('C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\config.php');
 
 ?>
 
@@ -10,6 +10,15 @@ include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
 
 <!-- Recent Sales Start -->
 <div class="container-fluid pt-4 px-4">
+<?php
+if(isset($_SESSION['message'])) :
+  ?>
+  <h5 class="alert alert-success"><?=$_SESSION['message']?></h5>
+  
+  <?php 
+unset($_SESSION['message']);
+endif; 
+?>
                 <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h6 class="mb-0">categories</h6>
@@ -29,23 +38,39 @@ include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
                             <tbody>
 
                             <?php
-$sql="select * from `category`";
-$result=mysqli_query($con,$sql);
-if($result){
-    while($row=mysqli_fetch_assoc($result)){
-        $idC=$row['idC'];
-        $nameC=$row['nameC'];
+                           
 
-        echo'<tr>
-                                    
-        <td>'.$nameC.'</td>
-
-        <td><a class="btn btn-sm btn-primary" href="updatecategory.php?updateid='.$idC.'">Update</a>
-        <a class="btn btn-sm btn-primary" href="deletecategory.php?deleteid='.$idC.'">Delete</a></td>
-    </tr>';
-    } 
+$query = "SELECT * FROM category" ;
+$statement = $conn->prepare($query);
+$statement->execute();
+$statement->setFetchMode(PDO::FETCH_OBJ);
+$result = $statement->fetchAll();
+if($result)
+{
+foreach($result as $row)
+{
+  ?>
+ <tr>
+    <td><?=$row->nameC;?></td>
+    
+    <td><a class="btn btn-sm btn-primary" href="updatecategory.php?updateid=<?=$row->idC;?>">Update</a>
+        <a class="btn btn-sm btn-primary" href="deletecategory.php?deleteid=<?=$row->idC;?>">Delete</a></td>
+</tr> 
+  <?php
 }
-          ?>
+}
+else
+{
+
+  ?>
+  <tr>
+    <td colspan="2"->No Record Found></td>
+</tr> 
+  <?php
+
+}
+
+?>
                                 
        
                             </tbody>

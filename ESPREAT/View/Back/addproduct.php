@@ -1,6 +1,8 @@
 <?php
-include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
 
+
+session_start();
+include ('C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\config.php');
 if (isset($_POST['submit'])) {
 
     $nameP=$_POST['nameP'];
@@ -10,9 +12,7 @@ if (isset($_POST['submit'])) {
     $description=$_POST['description'];
     $fkC=$_POST['fkC'];
 
-
-
-//declaring variables
+    //declaring variables
 $filename = $_FILES['fileToUpload']['name'];
 $filetmpname = $_FILES['fileToUpload']['tmp_name'];
 //folder where images will be uploaded
@@ -22,32 +22,49 @@ move_uploaded_file($filetmpname, $folder.$filename);
 //inserting image details (ie image name) in the database
 
 
-if( $result) {
+
+/*if( $result) {
 echo "</br>image uploaded"; 
-}
-$sql="insert into `product` (nameP,price,image,quantity,description,fkC)
-    values('$nameP','$price','$filename', '$quantity','$description','$fkC')";
-
-
-
+}*/
     
-    $result=mysqli_query($con,$sql);
-    if ($result) {
-       // echo "data inserted successfully";
-       header('location:backproducts.php');
-    } else {
-        die (mysqli_error($con));
-    }
+    
 
+    $query = "INSERT INTO product (nameP,price,image,quantity,description,fkC) VALUES (:nameP, :price, :filename, :quantity, :description, :fkC)";
+    $query_run = $conn->prepare($query);
+
+    $data = [
+        ':nameP' => $nameP,
+        ':price' => $price,
+        ':filename' => $filename,
+        ':quantity' => $quantity,
+        ':description' => $description,
+        ':fkC' => $fkC
+        
+    ];
+    $query_execute = $query_run->execute($data);
+
+    if ($query_execute) {
+       $_SESSION['message']="inserted successfully";
+        header('location:backproducts.php');
+        exit(0);
+     } 
+     else
+      {
+        $_SESSION['message']="not inserted successfully";
+        header('location:backproducts.php');
+        exit(0);
+     }
 
 }
+
+   
 ?>
 
 <?php include('header.php'); ?>
 <?php include('navbar.php'); ?>
 
 <div class="container-fluid">
-<form method="post" enctype="multipart/form-data" autocomplete="off">
+<form  method="POST" enctype="multipart/form-data" autocomplete="off">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
@@ -90,7 +107,7 @@ $sql="insert into `product` (nameP,price,image,quantity,description,fkC)
                         
                         
 <?php
-                        if($r_set = $con->query("SELECT * from category")){
+                       /* if($r_set = $conn->query("SELECT * from category")){
 
 echo "<select idC=idC nameC=nameC class='form-control' style='width:256px;' name='fkC'>";
 
@@ -100,9 +117,9 @@ echo "<option value=$row[idC]>$row[nameC]</option>";
 echo "</select>";
 }else{
 echo $connection->error;
-}
+}*/
 ?>
-<label>Category</label>
+<!--<label>Category</label>-->
 </div>
 <br>
 

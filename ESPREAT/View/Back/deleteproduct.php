@@ -1,16 +1,33 @@
 <?php
-include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
+session_start();
+include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\config.php';
 
 if(isset($_GET['deleteid'])){
 
     $idP=$_GET['deleteid'];
-    $sql="delete from `product` where idP=$idP";
-    $result=mysqli_query($con,$sql);
-    if($result){
-        //echo "Deleted successfully";
-        header("location:backproducts.php");
-    }else{
-        die(mysqli_connect($con));
-    }
+    try{
+    $query="DELETE FROM product where idP=$idP";
+    $statement = $conn->prepare($query);
+
+   /* $data = [
+        ':idP' => $idP
+        
+    ];*/
+    $query_execute = $statement->execute();
+
+    if ($query_execute) {
+        $_SESSION['message']="deleted successfully";
+         header('location:backproducts.php');
+         exit(0);
+      } 
+      else
+       {
+         $_SESSION['message']="not deleted successfully";
+         header('location:backproducts.php');
+         exit(0);
+      }
+    }catch(PDOException $e)
+    {echo $e->getMessage();}
+   
 }
 ?>

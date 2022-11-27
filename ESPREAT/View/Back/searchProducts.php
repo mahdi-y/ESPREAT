@@ -1,39 +1,43 @@
 <?php
 
 
-include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
+include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\config.php';
 
 
 // Create connection
-$sql = "SELECT * FROM product WHERE nameP LIKE '%".$_POST['nameP']."%'";
+$query = "SELECT * FROM product WHERE nameP LIKE '%".$_POST['nameP']."%'";
 
-$result1 = mysqli_query($con, $sql);
-if(mysqli_num_rows($result1)>0){
-	while ($row=mysqli_fetch_assoc($result1)) {
-        $idP=$row['idP'];
-        $nameP=$row['nameP'];
-        $price=$row['price'];
-        $quantity=$row['quantity'];
-        $image=$row['image'];
-        $description=$row['description'];
-        $fkC=$row['fkC'];
-
-		echo'<tr>
-                                 
-        <td>'.$nameP.'</td>
-        <td>'.$price.' DT</td>
-        <td>'.$quantity.'</td>
-        <td><img height="80" width="80" src="img/'.$image.' " alt=""> </td> 
-        <td>'.$description.'</td>
-        <td>'.$fkC.'</td>
-
-        <td><a class="btn btn-sm btn-primary" href="updateproduct.php?updateid='.$idP.'">Update</a>
-        <a class="btn btn-sm btn-primary" href="deleteproduct.php?deleteid='.$idP.'">Delete</a></td>
-    </tr>';
-	}
+$statement = $conn->prepare($query);
+$statement->execute();
+$statement->setFetchMode(PDO::FETCH_OBJ);
+$result = $statement->fetchAll();
+if($result)
+{
+foreach($result as $row)
+{
+  ?>
+ <tr>
+    <td><?=$row->nameP;?></td>
+    <td><?=$row->price;?></td>
+    <td><?=$row->quantity;?></td>
+    <td><?=$row->image;?></td>
+    <td><?=$row->description;?></td>
+    <td><?=$row->fkC;?></td>
+    <td><a class="btn btn-sm btn-primary" href="updateproduct.php?updateid=<?=$row->idP;?>">Update</a>
+        <a class="btn btn-sm btn-primary" href="deleteproduct.php?deleteid=<?=$row->idP;?>">Delete</a></td>
+    </tr> 
+  <?php
 }
-else{
-	echo "<tr><td>0 result's found</td></tr>";
 }
 
+else
+{
+
+  ?>
+  <tr>
+    <td colspan="7"->No Record Found></td>
+</tr> 
+  <?php
+
+}
 ?>

@@ -1,48 +1,40 @@
 <?php
-include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
 
+
+session_start();
+include ('C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\config.php');
 if (isset($_POST['submit'])) {
 
     $nameC=$_POST['nameC'];
+    
+    
+    
 
-   /* if($_FILES["image"]["error"] === 4){
-        echo 
-        "<script> alert('Image Does Not Exist');</script>";
-    }else{
-        $filename = $_FILES["image"]["name"];
-        $filename = $_FILES["image"]["size"];
-        $filename = $_FILES["image"]["tmp_name"];
+    $query = "INSERT INTO category (nameC) VALUES (:nameC)";
+    $query_run = $conn->prepare($query);
 
-        $validImageExtension = ['jpg','jpeg','png'];
-        $imageExtension = explose('.', $filename);
-        $imageExtension = strtolower(end($imageExtension));
-        if(!in_array($imageExtension, $validImageExtension)){
-            echo 
-        "<script> alert('Invalid image Extension');</script>";
-        }else{
-            $newImageName = uniqid();
-            $newImageName .= '.' . $imageExtension;
+    $data = [
+        ':nameC' => $nameC,
+        
+        
+    ];
+    $query_execute = $query_run->execute($data);
 
-            move_uploaded_file($tmpName, 'img/', $newImageName);
-
-
-        }
-
-    }
-*/
-    $sql="insert into `category` (nameC)
-    values('$nameC')";
-
-    $result=mysqli_query($con,$sql);
-    if ($result) {
-       // echo "data inserted successfully";
-       header('location:backcategories.php');
-    } else {
-        die (mysqli_error($con));
-    }
-
+    if ($query_execute) {
+       $_SESSION['message']="inserted successfully";
+        header('location:categories.php');
+        exit(0);
+     } 
+     else
+      {
+        $_SESSION['message']="not inserted successfully";
+        header('location:categories.php');
+        exit(0);
+     }
 
 }
+
+   
 ?>
 
 <?php include('header.php'); ?>

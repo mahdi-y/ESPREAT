@@ -1,7 +1,7 @@
 <?php
 
-include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
-
+session_start();
+include('C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\config.php');
 
 ?>
 
@@ -10,6 +10,17 @@ include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
 
 <!-- Recent Sales Start -->
 <div class="container-fluid pt-4 px-4">
+
+  <?php
+if(isset($_SESSION['message'])) :
+  ?>
+  <h5 class="alert alert-success"><?=$_SESSION['message']?></h5>
+  
+  <?php 
+unset($_SESSION['message']);
+endif; 
+?>
+  
                 <div class="bg-secondary text-center rounded p-4">
                     
                     <div class="d-flex align-items-center justify-content-between mb-4">
@@ -39,32 +50,43 @@ include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
 
 
                             <?php
-$sql="select * from `product`";
-$result=mysqli_query($con,$sql);
-if($result){
-    while($row=mysqli_fetch_assoc($result)){
-        $idP=$row['idP'];
-        $nameP=$row['nameP'];
-        $price=$row['price'];
-        $quantity=$row['quantity'];
-        $image=$row['image'];
-        $description=$row['description'];
-        $fkC=$row['fkC'];
-        echo'<tr>
-                                 
-        <td>'.$nameP.'</td>
-        <td>'.$price.' DT</td>
-        <td>'.$quantity.'</td>
-        <td><img height="80" width="80" src="img/'.$image.' " alt=""> </td> 
-        <td>'.$description.'</td> 
-        <td>'.$fkC.'</td>
+                           
 
-        <td><a class="btn btn-sm btn-primary" href="updateproduct.php?updateid='.$idP.'">Update</a>
-        <a class="btn btn-sm btn-primary" href="deleteproduct.php?deleteid='.$idP.'">Delete</a></td>
-    </tr>';
-    } 
+$query = "SELECT * FROM product" ;
+$statement = $conn->prepare($query);
+$statement->execute();
+$statement->setFetchMode(PDO::FETCH_OBJ);
+$result = $statement->fetchAll();
+if($result)
+{
+foreach($result as $row)
+{
+  ?>
+ <tr>
+    <td><?=$row->nameP;?></td>
+    <td><?=$row->price;?></td>
+    <td><?=$row->quantity;?></td>
+    <td><?=$row->image;?></td>
+    <td><?=$row->description;?></td>
+    <td><?=$row->fkC;?></td>
+    <td><a class="btn btn-sm btn-primary" href="updateproduct.php?updateid=<?=$row->idP;?>">Update</a>
+        <a class="btn btn-sm btn-primary" href="deleteproduct.php?deleteid=<?=$row->idP;?>">Delete</a></td>
+</tr> 
+  <?php
 }
-          ?>
+}
+else
+{
+
+  ?>
+  <tr>
+    <td colspan="6"->No Record Found></td>
+</tr> 
+  <?php
+
+}
+
+?>
 
 
                                 
@@ -82,7 +104,7 @@ if($result){
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-  <script type="text/javascript">
+ <script type="text/javascript">
   $(document).ready(function(){
     $("#search").keypress(function(){
       $.ajax({

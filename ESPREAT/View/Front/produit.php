@@ -1,7 +1,7 @@
 
 
 <?php
-include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
+include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -142,7 +142,7 @@ include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\connect.php';
      
       
       <?php
-$sql="select * from `product`";
+/*$sql="select * from `product`";
 $result=mysqli_query($con,$sql);
 if($result){
     while($row=mysqli_fetch_assoc($result)){
@@ -153,9 +153,18 @@ if($result){
         $image=$row['image'];
         $description=$row['description'];
         $fkC=$row['fkC'];
-        echo'
+        echo'*/
+        $query = "SELECT * FROM product" ;
+$statement = $conn->prepare($query);
+$statement->execute();
+$statement->setFetchMode(PDO::FETCH_OBJ);
+$result = $statement->fetchAll();
+if($result)
+{
+foreach($result as $row)
+{
         
-        
+        ?>
         <div class="tab-content" id="pills-tabContent">
         <div
           class="tab-pane fade show active"
@@ -171,25 +180,24 @@ if($result){
               <div class="container">
         
 
-             <img height="300" width="345" src="../Back/img/'.$image.' " alt=""
+             <img height="300" width="345" src="../Back/img/<?=$row->image;?> " alt=""
              class="rounded-0 card-img-top mg-responsive">
               
                 <div class="card-body">
                  <h1 class="text-center mb-4">
-                    <a href="#" class="badge badge-primary">'.$price.' DT</a>
+                    <a href="#" class="badge badge-primary"><?=$row->price;?> DT</a>
                   </h1>
-                  <h4 class="pt20 pb20">'.$nameP.'</h4>
+                  <h4 class="pt20 pb20"><?=$row->nameP;?></h4>
               <p class="text-white">
-                  '.$description.'
+                  <?=$row->description;?>
                   </p>
                   
                 </div>
               </div>
-            </div>'; 
+            </div>
           
-          } 
-        }
-                  ?>
+          
+                  
         
         
                                         
@@ -201,7 +209,21 @@ if($result){
                     </div>
         
         
-        
+                    <?php
+}
+}
+else
+{
+
+  ?>
+  <tr>
+    <td colspan="4"->No Record Found></td>
+</tr> 
+  <?php
+
+}
+
+?>
         
         
         
