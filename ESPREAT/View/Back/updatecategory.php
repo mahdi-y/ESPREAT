@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\config.php');
+include ('../../config.php');
 if (isset($_POST['submit']))
  {
     $idC=$_POST['idC'];

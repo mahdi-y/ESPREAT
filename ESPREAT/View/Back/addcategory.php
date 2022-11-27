@@ -2,7 +2,7 @@
 
 
 session_start();
-include ('C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\config.php');
+include ('../../config.php');
 if (isset($_POST['submit'])) {
 
     $nameC=$_POST['nameC'];
@@ -22,13 +22,13 @@ if (isset($_POST['submit'])) {
 
     if ($query_execute) {
        $_SESSION['message']="inserted successfully";
-        header('location:categories.php');
+        header('location:backcategories.php');
         exit(0);
      } 
      else
       {
         $_SESSION['message']="not inserted successfully";
-        header('location:categories.php');
+        header('location:backcategories.php');
         exit(0);
      }
 

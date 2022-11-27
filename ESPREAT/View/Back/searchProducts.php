@@ -1,7 +1,7 @@
 <?php
 
 
-include 'C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\config.php';
+include '../../config.php';
 
 
 // Create connection

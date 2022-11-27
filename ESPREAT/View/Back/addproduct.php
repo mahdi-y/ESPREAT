@@ -2,7 +2,7 @@
 
 
 session_start();
-include ('C:\xampp\htdocs\espreat\ESPREAT\ESPREAT\config.php');
+include ('../../config.php');
 if (isset($_POST['submit'])) {
 
     $nameP=$_POST['nameP'];
@@ -107,6 +107,8 @@ echo "</br>image uploaded";
                         
                         
 <?php
+
+
                        /* if($r_set = $conn->query("SELECT * from category")){
 
 echo "<select idC=idC nameC=nameC class='form-control' style='width:256px;' name='fkC'>";
