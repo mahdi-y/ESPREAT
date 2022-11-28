@@ -35,12 +35,12 @@ if(isset($_POST["update_donation_btn"])){
 
         $data = [
             
-            ':identifiantClient' => $identifiantClient,
-            ':classe' => $classe,
-            ':gender' => $gender,
-            ':montant' => $montant,
-            ':anonymat' => $anonymat,
-            ':donation_idDon' => $donation_idDon,
+            'identifiantClient' => $identifiantClient,
+            'classe' => $classe,
+            'gender' => $gender,
+            'montant' => $montant,
+            'anonymat' => $anonymat,
+            'donation_idDon' => $donation_idDon,
 
         ];
         $query_execute = $statement->execute($data);

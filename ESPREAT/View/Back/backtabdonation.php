@@ -18,7 +18,7 @@
                                     <th scope="col">id Client</th>
                                     <th scope="col">classe</th>
                                     <th scope="col">sexe</th>
-                                    <th scope="col">motant</th>
+                                    <th scope="col">montant</th>
                                     <th scope="col">anonymat</th>
                                     
                                     
