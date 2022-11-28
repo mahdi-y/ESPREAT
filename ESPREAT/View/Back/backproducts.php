@@ -27,8 +27,10 @@ endif;
                     
                         <h6 class="mb-0">Products</h6>
                         <form class="d-none d-md-flex ms-4">
+
                     <input class="form-control bg-dark border-0" type="search" id="search" placeholder="Search">
                 </form>
+                
                         <a href="addproduct.php">Add product</a>
                     </div>
                     <div class="table-responsive">
@@ -99,6 +101,7 @@ else
             <!-- Recent Sales End -->
         
                     <?php include('footer.php'); ?>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

@@ -21,7 +21,7 @@ endif;
 ?>
                 <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">categories</h6>
+                        <h6 class="mb-0">Categories</h6>
                         <a href="addcategory.php">Add category</a>
                     </div>
                     <div class="table-responsive">

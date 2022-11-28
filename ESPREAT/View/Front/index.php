@@ -45,7 +45,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
@@ -129,7 +129,7 @@
       id="gallary"
       class="text-center bg-dark text-light has-height-md middle-items wow fadeIn"
     >
-      <h2 class="section-title"><a href="produit.php">OUR MENU</a></h2>
+      <h2 class="section-title"><a href="listcategories.php">OUR MENU</a></h2>
     </div>
     <div class="gallary row">
       <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">

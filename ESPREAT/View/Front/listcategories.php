@@ -9,7 +9,7 @@ include 'header.php';
       id="blog"
       class="container-fluid bg-dark text-light py-5 text-center wow fadeIn"
     >
-      <h2 class="section-title py-5">OUR CATEGORIES</h2>
+      <h2 class="section-title py-5">OUR MENU</h2>
 
       <?php
 
@@ -71,8 +71,10 @@ else
 
 ?>
 <?php
-//include 'footer.php';
+include 'footer.php';
 ?>
+
+
 
      
       
