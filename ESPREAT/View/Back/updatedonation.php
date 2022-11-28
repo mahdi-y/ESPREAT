@@ -1,6 +1,7 @@
 <?php include('header.php'); ?>
 <?php include('navbar.php'); ?>
 <?php include('functions.php'); ?>
+<?php include('connect.php'); ?>
 
 
 <!-- Recent Sales Start -->
@@ -11,35 +12,51 @@
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <a href="index.html" class="">
                             </a>
-                            <h3>add donation</h3>
+                            <h3>update donation</h3>
                         </div>
+                        <?php
+                        if(isset($_GET['idDon']))
+                        {
+                            $donation_idDon = $_GET['idDon'];
+
+                            $query = "SELECT * FROM donation WHERE idDon=:dona_idDon LIMIT 1";
+                            $statement = $conn->prepare($query);
+                            $data = [':dona_idDon' =>$donation_idDon];
+                            $statement->execute($data);
+                            $result = $statement->fetch(PDO::FETCH_OBJ);
+                            
+
+                        }
+                        ?>
                         <form action="adddonation.php" method ="post">
-                        
+                            <input type="hidden" class="" name="donation_idDon" value="<?= $result->idDon; ?>"> 
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="identifiantClient">
-                            <label for="floatingText">idClient</label>
+                        
+                            <input type="text" class="form-control" value="<?= $result->identifiantClient; ?>" id="floatingText" placeholder="jhondoe" name="identifiantClient">
+                            <label for="floatingText">identifiantClient</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="floatingText" placeholder="jhondoe" name="classe">
+                            <input type="number" class="form-control" value="<?= $result->classe; ?>" id="floatingText" placeholder="jhondoe" name="classe">
                             <label for="floatingText">classe</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="gender">
+                            <input type="text" class="form-control" value="<?= $result->gender; ?>" id="floatingText" placeholder="jhondoe" name="gender">
                             <label for="floatingText">gender</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="floatingText" placeholder="jhondoe" name="montant">
+                            <input type="number" class="form-control" value="<?= $result->montant; ?>" id="floatingText" placeholder="jhondoe" name="montant">
                             <label for="floatingText">montant</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="floatingText" placeholder="(0:oui , 1:non)" name="anonymat">
+                            <input type="number" class="form-control" value="<?= $result->anonymat; ?>" id="floatingText" placeholder="jhondoe" name="anonymat">
                             <label for="floatingText">anonymat</label>
                         </div>
+                       
                         
                         <div class="d-flex align-items-center justify-content-between mb-4">
                             <div class="form-check">
                        
-                        <button type="submit" name="submit" class="btn btn-primary py-3 w-100 mb-4">add donation</button>
+                        <button type="floatingText" name="update_donation_btn" class="btn btn-primary py-3 w-100 mb-4">update donation</button>
                         
                     </div>
                 </div>

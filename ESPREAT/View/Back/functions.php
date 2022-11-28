@@ -1,28 +1,53 @@
 <?php
 
-function createUser($conn,$nom,$numero){
-    $sql ="INSERT INTO association (nom,numero) values(?,?);";
-    $stmt= mysqli_stmt_init($conn);
+function createUser($conn,$nom,$numero,$idA){
+    $query ="INSERT INTO association (nom,numero,idA) values(:nom,:numero,:idA);";
+    $query_run = $conn->prepare($query);
 
-    if (!mysqli_stmt_prepare($stmt,$sql)){
-        header("location : signup.php?error=stmtfailed ");
-    exit();
+    $data = [
+        ':nom' => $nom,
+        ':numero' => $numero,
+        ':idA' => $idA
+    ];
+    $query_execute = $query_run->execute($data);
+    if($query_execute)
+    {
+        
+        header('Location: backtab.php');
+        exit(0);
     }
-    mysqli_stmt_bind_param($stmt,"ss",$nom,$numero);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
+    else
+    {
+        
+        header('Location: backtab.php');
+        exit(0);
+    }
 }
 
-function createdonation($conn,$idClient,$classe,$gender,$montant,$anonymat){
-    $sql ="INSERT INTO donation (idClient,classe,gender,montant,anonymat) values(?,?,?,?,?);";
-    $stmt= mysqli_stmt_init($conn);
+function createDonation($conn,$idDon,$identifiantClient,$classe,$gender,$montant,$anonymat){
+    $query ="INSERT INTO donation (idDon,identifiantClient,classe,gender,montant,anonymat) values(:idDon,:identifiantClient,:classe,:gender,:montant,:anonymat);";
+    $query_run = $conn->prepare($query);
 
-    if (!mysqli_stmt_prepare($stmt,$sql)){
-        header("location : signup.php?error=stmtfailed ");
-    exit();
+    $data = [
+        ':idDon' => $idDon,
+        ':identifiantClient' => $identifiantClient,
+        ':classe' => $classe,
+        ':gender' => $gender,
+        ':montant' => $montant,
+        ':anonymat' => $anonymat,
+    ];
+    $query_execute = $query_run->execute($data);
+    if($query_execute)
+    {
+        
+        header('Location: backtabdonation.php');
+        exit(0);
     }
-    mysqli_stmt_bind_param($stmt,"dsddd",$idClient,$classe,$gender,$montant,$anonymat);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
+    else
+    {
+        
+        header('Location: backtabdonation.php');
+        exit(0);
+    }
 }
 ?>

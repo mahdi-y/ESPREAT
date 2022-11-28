@@ -106,7 +106,7 @@
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-white">
-                                    
+                                <th scope="col">id association</th>
                                     <th scope="col">nom</th>
                                     <th scope="col">numero</th>
                                     
@@ -115,25 +115,29 @@
                             </thead>
                             <tbody>
                             <?php
-                                    $sql = "Select * from association ";
-                                    $result=mysqli_query($conn,$sql);
-                                    if($result){
-                                        while($row=mysqli_fetch_assoc($result)){
-                                            
-                                            $numero=$row['numero'];
-                                            $nom=$row['nom'];
-                                            $idA=$row['idA'];
-                                            echo'  <tr>
-                                            
-                                            <td>'.$nom.'</td>
-                                            <td>'.$numero.'</td>
-                                            
-                                        
-                                            </tr>';
+                                    $query = "Select * from association";
+                                    $statement = $conn->prepare($query);
+                                    $statement->execute();
 
+                                    $result = $statement->fetchAll(PDO::FETCH_OBJ);
+                                    if($result)
+                                    {
+                                        foreach($result as $row)
+                                        {
+                                            ?>
+                                            
+                                            <tr>
+                                                <td><?= $row->idA; ?></td>
+                                                <td><?= $row->nom; ?></td>
+                                                <td><?= $row->numero; ?></td>
+                                                
+                                                
+                                           
+                                                
+                                            </tr>
+                                            <?php 
                                         }
                                     }
-                                    
 
                                     ?>
                                 

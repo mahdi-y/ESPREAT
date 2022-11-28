@@ -14,7 +14,7 @@
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-white">
-                                    
+                                <th scope="col">id Don</th>
                                     <th scope="col">id Client</th>
                                     <th scope="col">classe</th>
                                     <th scope="col">sexe</th>
@@ -27,31 +27,38 @@
                             </thead>
                             <tbody>
                             <?php
-                                    $sql = "Select * from donation ";
-                                    $result=mysqli_query($conn,$sql);
-                                    if($result){
-                                        while($row=mysqli_fetch_assoc($result)){
-                                            
-                                            $idClient=$row['idClient'];
-                                            $classe=$row['classe'];
-                                            $gender=$row['gender'];
-                                            $montant=$row['montant'];
-                                            $anonymat=$row['anonymat'];
-                                            echo'  <tr>
-                                            
-                                            <td>'.$idClient.'</td>
-                                            <td>'.$classe.'</td>
-                                            <td>'.$gender.'</td>
-                                            <td>'.$montant.'</td>
-                                            <td>'.$anonymat.'</td>
-                                            
-                                        <td><a class="btn btn-sm btn-primary" href="">Update</a> </td>
-                                        <td> <a class="btn btn-sm btn-primary" href="deletedonation.php?deleteid='.$idClient.'">Delete</a></td>
-                                            </tr>';
+                                    $query = "Select * from donation";
+                                    $statement = $conn->prepare($query);
+                                    $statement->execute();
 
+                                    $result = $statement->fetchAll(PDO::FETCH_OBJ);
+                                    if($result)
+                                    {
+                                        foreach($result as $row)
+                                        {
+                                            ?>
+                                            
+                                            <tr>
+                                                <td><?= $row->idDon; ?></td>
+                                                <td><?= $row->identifiantClient; ?></td>
+                                                <td><?= $row->classe; ?></td>
+                                                <td><?= $row->gender; ?></td>
+                                                <td><?= $row->montant; ?></td>
+                                                <td><?= $row->anonymat; ?></td>
+                                                
+                                                <td>
+                                                    <a class="btn btn-sm btn-primary" href="updatedonation.php?idDon=<?= $row->idDon; ?>" >Update</a>
+                                        </td>
+                                        <td> 
+                                                    <form action="adddonation.php" method="post">
+                                                        <button type="submit" name="delete_donation" value="<?=$row->idDon;?>" class="btn btn-sm btn-primary">Delete </button>
+                                                    </form>
+                                                    </td>   
+                                                
+                                            </tr>
+                                            <?php 
                                         }
                                     }
-                                    
 
                                     ?>
                                 

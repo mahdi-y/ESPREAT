@@ -14,7 +14,7 @@
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-white">
-                                    
+                                    <th scope="col">ID</th>
                                     <th scope="col">nom</th>
                                     <th scope="col">numero</th>
                                     
@@ -23,26 +23,35 @@
                             </thead>
                             <tbody>
                             <?php
-                                    $sql = "Select * from association ";
-                                    $result=mysqli_query($conn,$sql);
-                                    if($result){
-                                        while($row=mysqli_fetch_assoc($result)){
-                                            
-                                            $numero=$row['numero'];
-                                            $nom=$row['nom'];
-                                            $idA=$row['idA'];
-                                            echo'  <tr>
-                                            
-                                            <td>'.$nom.'</td>
-                                            <td>'.$numero.'</td>
-                                            
-                                        <td><a class="btn btn-sm btn-primary" href="">Update</a> </td>
-                                        <td> <a class="btn btn-sm btn-primary" href="delete.php?deleteid='.$idA.'">Delete</a></td>
-                                            </tr>';
+                                    $query = "Select * from association";
+                                    $statement = $conn->prepare($query);
+                                    $statement->execute();
 
+                                    $result = $statement->fetchAll(PDO::FETCH_OBJ);
+                                    if($result)
+                                    {
+                                        foreach($result as $row)
+                                        {
+                                            ?>
+                                            
+                                            <tr>
+                                                <td><?= $row->idA; ?></td>
+                                                <td><?= $row->nom; ?></td>
+                                                <td><?= $row->numero; ?></td>
+                                                
+                                                <td>
+                                                    <a class="btn btn-sm btn-primary" href="updateassociation.php?idA=<?= $row->idA; ?>" >Update</a>
+                                        </td>
+                                        <td> 
+                                                    <form action="add.php" method="post">
+                                                        <button type="submit" name="delete_association" value="<?=$row->idA;?>" class="btn btn-sm btn-primary">Delete </button>
+                                                    </form>
+                                                    </td>   
+                                                
+                                            </tr>
+                                            <?php 
                                         }
                                     }
-                                    
 
                                     ?>
                                 
