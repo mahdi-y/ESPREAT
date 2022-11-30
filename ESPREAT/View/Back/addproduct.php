@@ -106,22 +106,38 @@ echo "</br>image uploaded";
                         <div class="form-floating mb-4">
                         
                         
+
+
+
+
+
 <?php
 
 
-                       /* if($r_set = $conn->query("SELECT * from category")){
-
-echo "<select idC=idC nameC=nameC class='form-control' style='width:256px;' name='fkC'>";
-
-while ($row = $r_set->fetch_assoc()) {
-echo "<option value=$row[idC]>$row[nameC]</option>";
-}
-echo "</select>";
-}else{
-echo $connection->error;
-}*/
+$query = "SELECT * FROM category" ;
 ?>
-<!--<label>Category</label>-->
+<select idC=idC nameC=nameC class='form-control' style='width:256px;' name='fkC'>;
+<?php
+$statement = $conn->prepare($query);
+$statement->execute();
+$statement->setFetchMode(PDO::FETCH_OBJ);
+$result = $statement->fetchAll();
+
+foreach($result as $row)
+{
+  ?>
+  
+  <option value=<?=$row->idC;?>><?=$row->nameC;?></option>;
+  <?php
+}
+?>
+   </select>
+ 
+
+
+<label>Category</label>
+
+
 </div>
 <br>
 
