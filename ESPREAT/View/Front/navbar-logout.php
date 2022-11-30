@@ -35,7 +35,7 @@
         </a>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="listProductsCart.php"
+            <a class="nav-link" href="Cart.php"
               >Cart<span class="sr-only">(current)</span></a
             >
           </li>

@@ -5,12 +5,12 @@ if (isset($_POST["login"])){
     if ($_POST["identifiant"]==""){
         echo "<script>alert('Id Can't be empty')</script>";
     }else{
-        $identifiant=trim($_POST["identifiant"]);
+        $user_id=trim($_POST["identifiant"]);
         $query=$db->prepare("SELECT * FROM client WHERE identifiant=?");
-        $query->execute(array($identifiant));
+        $query->execute(array($user_id));
         $control=$query->fetch(PDO::FETCH_OBJ);
         if ($control>0){
-            $_SESSION["identifiant"]=$identifiant;
+            $_SESSION["identifiant"]=$user_id;
             header("Location:index-logout.php");
         }
         echo "<script>alert('Incorrect id')</script>";
