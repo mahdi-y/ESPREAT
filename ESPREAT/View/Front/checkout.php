@@ -74,7 +74,7 @@ if(isset($_POST['order'])){
          $select_cart->execute([$user_id]);
          if($select_cart->rowCount() > 0){
             while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)){
-               $cart_items[] = $fetch_cart['name'].' ('.$fetch_cart['price'].' x '. $fetch_cart['quantity'].') - ';
+               $cart_items[] = $fetch_cart['name'].' ('.$fetch_cart['price'].'dt x '. $fetch_cart['quantity'].') - ';
                $total_products = implode($cart_items);
                $grand_total += ($fetch_cart['price'] * $fetch_cart['quantity']);
       ?>
@@ -94,10 +94,10 @@ if(isset($_POST['order'])){
 
       <div class="flex">
          <div class="inputBox">
-            <input type="number" name="number" placeholder="enter your number" class="form-control form-control-lg custom-form-control col-sm-6 col-md-3 col-xs-12 my-2" min="0" max="9999999999" onkeypress="if(this.value.length == 10) return false;" required>
+            <input type="number" name="number" placeholder="enter your number" class="form-control form-control-lg custom-form-control col-sm-6 col-md-3 col-xs-12 my-2" min="0" max="99999999" onkeypress="if(this.value.length == 10) return false;" pattern="{8}" required>
          </div>
          <div class="inputBox">
-            <input type="text" name="bloc" placeholder="enter your building name e.g. bloc H" class="form-control form-control-lg custom-form-control col-sm-6 col-md-3 col-xs-12 my-2" maxlength="50" style="margin-top: 10px ;" required>
+            <input type="text" name="bloc" placeholder="enter your building name e.g. bloc H" class="form-control form-control-lg custom-form-control col-sm-6 col-md-3 col-xs-12 my-2" maxlength="50" style="margin-top: 10px ;" pattern="(?=.*[A-Ma-m]).{1}" required>
          </div>
       </div>
 

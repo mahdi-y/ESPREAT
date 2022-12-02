@@ -23,10 +23,10 @@
             <a class="nav-link" href="#gallary">Gallary</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#book-table">Collection Point</a>
+            <a class="nav-link" href="produit.php">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="produit.php">Order</a>
+            <a class="nav-link" href="orders.php">Orders</a>
           </li>
         </ul>
         <a class="navbar-brand m-auto" href="index.php">

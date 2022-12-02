@@ -33,7 +33,7 @@ $user_id = $_SESSION["identifiant"];
 <?php include 'header.php'; ?>
 <?php include ('navbar-logout.php'); ?>
 
-<section class="orders">
+<section class="orders" style="margin-top: 150px;margin-left: 150px;">
 
    <h1 class="heading">placed orders</h1>
 
@@ -51,9 +51,9 @@ $user_id = $_SESSION["identifiant"];
    <div class="box">
       <p>placed on : <span><?= $fetch_orders['placed_on']; ?></span></p>
       <p>number : <span><?= $fetch_orders['number']; ?></span></p>
-      <p>address : <span><?= $fetch_orders['bloc']; ?></span></p>
+      <p>bloc : <span><?= $fetch_orders['bloc']; ?></span></p>
       <p>your orders : <span><?= $fetch_orders['total_products']; ?></span></p>
-      <p>total price : <span>$<?= $fetch_orders['total_price']; ?>/-</span></p>
+      <p>total price : <span><?= $fetch_orders['total_price']; ?>dt</span></p>
       <p> payment status : <span style="color:<?php if($fetch_orders['payment_status'] == 'pending'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span> </p>
    </div>
    <?php
