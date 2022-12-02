@@ -50,13 +50,6 @@
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact Us</a>
           </li>
-          <li class="nav-item">
-            <a
-              href="logout.php"
-              class="btn btn-primary ml-xl-4"
-              >Logout</a
-            >
-          </li>
         </ul>
       </div>
     </nav>

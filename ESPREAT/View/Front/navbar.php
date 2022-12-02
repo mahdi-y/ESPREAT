@@ -29,13 +29,13 @@
             <a class="nav-link" href="produit.php">Order</a>
           </li>
         </ul>
-        <a class="navbar-brand m-auto" href="#">
+        <a class="navbar-brand m-auto" href="index.php">
           <img src="assets/imgs/logo.png" class="brand-img" alt="" />
           <span class="brand-txt">ESPREAT</span>
         </a>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#blog"
+            <a class="nav-link" href="Cart.php"
               >Cart<span class="sr-only">(current)</span></a
             >
           </li>

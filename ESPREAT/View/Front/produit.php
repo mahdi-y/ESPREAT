@@ -16,9 +16,9 @@ include('insert_cart.php');
 <?php include('navbar-logout.php') ?>
 
 
-<section class="products" style="margin-top: 250px;">
+<section class="products" style="margin-top: 150px;">
 
-   <h1 class="heading">latest products</h1>
+   <h1 class="heading" style="margin-left: 500px;">Latest Products</h1>
 
    <div class="box-container">
 
@@ -28,6 +28,7 @@ include('insert_cart.php');
      if($select_products->rowCount() > 0){
       while($fetch_product = $select_products->fetch(PDO::FETCH_ASSOC)){
    ?>
+   <div class="" style="margin-left: 250px;">
    <form action="" method="post" class="box">
       <input type="hidden" name="pid" value="<?= $fetch_product['id']; ?>">
       <input type="hidden" name="name" value="<?= $fetch_product['name']; ?>">
@@ -38,8 +39,10 @@ include('insert_cart.php');
          <div class="price"><span></span><?= $fetch_product['price']; ?><span>dt</span></div>
          <input type="number" name="quantity" class="quantity" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
       </div>
-      <input type="submit" value="add to cart" class="btn" name="add_to_cart">
+      <input type="submit" value="add to cart" class="btn btn-primary" name="add_to_cart"
+      style="margin-top: 5px;">
    </form>
+   </div>
    <?php
       }
    }else{
