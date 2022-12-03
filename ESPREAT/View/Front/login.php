@@ -25,14 +25,13 @@ if (isset($_POST["login"])){
     .wrapper{
         position: absolute;
         top: 40%;
-        left: 42%;
+        left: 39%;
         padding: 10px;
-        /* border: 1px solid black; */
         width: 300px;
         height: 250px;
-        line-height: 40px;
         text-align: center;
         font-weight: bold;
+
     }
 </style>
 <body>
@@ -40,9 +39,9 @@ if (isset($_POST["login"])){
         <form action="" method="post">
             <p>
                 <label for="">Identifiant</label>
-                <input type="text" name="identifiant" id="">
+                <input type="text" name="identifiant" id="" class="form-control form-control-lg custom-form-control" placeholder="xxx J(M/F)T xxx">
             </p>
-            <button type="submit" name="login" class="btn btn-primary ml-xl-4">Login</button>
+            <button type="submit" name="login" class="btn btn-primary" style="width: 150px;">Login</button>
         </form>
     </div>
 </body>

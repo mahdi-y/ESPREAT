@@ -15,10 +15,18 @@ include('insert_cart.php');
 <?php include('header.php') ?>
 <?php include('navbar-logout.php') ?>
 
+<style>
+   input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+</style>
 
 <section class="products" style="margin-top: 150px;">
 
-   <h1 class="heading" style="margin-left: 500px;">Latest Products</h1>
+   <h1 class="heading" style="margin-left: 500px; margin-bottom: 50px;">Latest Products</h1>
 
    <div class="box-container">
 
@@ -29,18 +37,17 @@ include('insert_cart.php');
       while($fetch_product = $select_products->fetch(PDO::FETCH_ASSOC)){
    ?>
    <div class="" style="margin-left: 250px;">
-   <form action="" method="post" class="box">
+   <form action="" method="post" class="box" autocomplete="off">
       <input type="hidden" name="pid" value="<?= $fetch_product['id']; ?>">
       <input type="hidden" name="name" value="<?= $fetch_product['name']; ?>">
       <input type="hidden" name="price" value="<?= $fetch_product['price']; ?>">
-      <a href="quick_view.php?pid=<?= $fetch_product['id']; ?>" class="fas fa-eye"></a>
       <div class="name"><?= $fetch_product['name']; ?></div>
       <div class="flex">
          <div class="price"><span></span><?= $fetch_product['price']; ?><span>dt</span></div>
-         <input type="number" name="quantity" class="quantity" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
+         <input type="number" name="quantity" class="form-control form-control-lg custom-form-control col-md-3 " min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1" style="text-align: center; width: 200px;">
       </div>
       <input type="submit" value="add to cart" class="btn btn-primary" name="add_to_cart"
-      style="margin-top: 5px;">
+      style="margin-top: 10px; margin-bottom: 25px; width: 200px;">
    </form>
    </div>
    <?php

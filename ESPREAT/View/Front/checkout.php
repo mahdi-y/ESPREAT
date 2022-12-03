@@ -94,14 +94,14 @@ if(isset($_POST['order'])){
 
       <div class="flex">
          <div class="inputBox">
-            <input type="number" name="number" placeholder="enter your number" class="form-control form-control-lg custom-form-control col-sm-6 col-md-3 col-xs-12 my-2" min="0" max="99999999" onkeypress="if(this.value.length == 10) return false;" pattern="{8}" required>
+            <input type="number" name="number" placeholder="enter your number" class="form-control form-control-lg custom-form-control col-sm-6 col-md-4" min="0" max="99999999" onkeypress="if(this.value.length == 10) return false;" pattern="{8}" required>
          </div>
          <div class="inputBox">
-            <input type="text" name="bloc" placeholder="enter your building name e.g. bloc H" class="form-control form-control-lg custom-form-control col-sm-6 col-md-3 col-xs-12 my-2" maxlength="50" style="margin-top: 10px ;" pattern="(?=.*[A-Ma-m]).{1}" required>
+            <input type="text" name="bloc" placeholder="enter your building name e.g. bloc H" class="form-control form-control-lg custom-form-control col-sm-6 col-md-4" maxlength="50" style="margin-top: 20px ;" pattern="(?=.*[A-Ma-m]).{1}" required>
          </div>
       </div>
 
-      <input type="submit" name="order" class="btn btn-primary <?= ($grand_total > 1)?'':'disabled'; ?>" value="place order">
+      <input style="margin-top: 20px ;" type="submit" name="order" class="btn btn-primary <?= ($grand_total > 1)?'':'disabled'; ?>" value="place order">
 
    </form>
 

@@ -30,7 +30,7 @@
           </li>
         </ul>
         <a class="navbar-brand m-auto" href="index.php">
-          <img src="assets/imgs/logo.png" class="brand-img" alt="" />
+          <img style="margin-left: 50px;" src="assets/imgs/logo.png" class="brand-img" alt="" />
           <span class="brand-txt">ESPREAT</span>
         </a>
         <ul class="navbar-nav">

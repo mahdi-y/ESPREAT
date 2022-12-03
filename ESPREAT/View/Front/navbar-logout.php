@@ -1,5 +1,6 @@
 <nav
-      class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top"
+      class=" navbar navbar-expand-lg navbar-dark fixed-top"
+      style="background-color: #292e34 ;"
       data-spy="affix"
       data-offset-top="10"
     >
@@ -29,8 +30,8 @@
             <a class="nav-link" href="orders.php">Orders</a>
           </li>
         </ul>
-        <a class="navbar-brand m-auto" href="index.php">
-          <img src="assets/imgs/logo.png" class="brand-img" alt="" />
+        <a class="navbar-brand m-auto" href="index.php" >
+          <img style="margin-left: 50px;" src="assets/imgs/logo.png" class="brand-img" alt="" />
           <span class="brand-txt">ESPREAT</span>
         </a>
         <ul class="navbar-nav">

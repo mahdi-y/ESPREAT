@@ -40,7 +40,7 @@ if(isset($_POST['update_quantity'])){
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
     
 
-    <section class="products shopping-cart" style="margin-left: 250px;">
+    <section class="products shopping-cart" style="margin-left: 50px;">
 
 
    <div class="box-container" >
@@ -57,8 +57,8 @@ if(isset($_POST['update_quantity'])){
       <div class="name"><?= $fetch_cart['name']; ?></div>
       <div class="flex">
          <div class="price"><?= $fetch_cart['price']; ?>dt</div>
-         <input type="number" name="quantity" class="quantity" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="<?= $fetch_cart['quantity']; ?>">
-         <button type="submit" class="btn btn-secondary" name="update_quantity" style="margin-left: 50px;">update</button>
+         <input type="number" name="quantity" class="quantity form-control form-control-lg custom-form-control col-md-2" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="<?= $fetch_cart['quantity']; ?>">
+         <button type="submit" class="btn btn-secondary" name="update_quantity" style="margin-left: 150px; ">update</button>
       </div>
       <div class="sub-total"> sub total : <span><?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?>dt</span> </div>
       <input type="submit" value="delete item" onclick="return confirm('delete this from cart?');" class="btn btn-danger" name="delete">

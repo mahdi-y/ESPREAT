@@ -35,7 +35,7 @@ $user_id = $_SESSION["identifiant"];
 
 <section class="orders" style="margin-top: 150px;margin-left: 150px;">
 
-   <h1 class="heading">placed orders</h1>
+   <h1 class="heading" style="margin-left: 350px;">placed orders</h1>
 
    <div class="box-container">
 
@@ -54,7 +54,7 @@ $user_id = $_SESSION["identifiant"];
       <p>bloc : <span><?= $fetch_orders['bloc']; ?></span></p>
       <p>your orders : <span><?= $fetch_orders['total_products']; ?></span></p>
       <p>total price : <span><?= $fetch_orders['total_price']; ?>dt</span></p>
-      <p> payment status : <span style="color:<?php if($fetch_orders['payment_status'] == 'pending'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span> </p>
+      <p style="margin-bottom: 45px;"> payment status : <span style="color:<?php if($fetch_orders['payment_status'] == 'pending'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span> </p>
    </div>
    <?php
       }
