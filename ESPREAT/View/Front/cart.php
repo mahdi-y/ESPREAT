@@ -38,10 +38,7 @@ if(isset($_POST['update_quantity'])){
 
 
     <section class="" style="margin-left: 45px;">
-
-
    <div class="container" style="margin-top: 140px; ">
-
    <?php
       $grand_total = 0;
       $select_cart = $db->prepare("SELECT * FROM `panier` WHERE user_id = ?");
@@ -56,29 +53,23 @@ if(isset($_POST['update_quantity'])){
          <div class="price" style="text-align: center; margin-bottom: 10px; font-size: 20px;"><?= $fetch_cart['price']; ?>dt</div>
          <input style="height: 40px; width: 80px; border-color: #6c757d;" type="number" name="quantity" class="quantity form-control form-control-lg custom-form-control col-md-5" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="<?= $fetch_cart['quantity']; ?>">
          <button type="submit" class="btn btn-secondary" name="update_quantity" style="margin-left: 80px; margin-top: -70px;">update</button>
-         
       <div class="sub-total" style="text-align: center; margin-top: -12px; font-size: 20px; margin-bottom: 12px;"> sub total : <span><?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?>dt</span> </div>
       <input style="margin-left: 25px;" type="submit" value="delete item" onclick="return confirm('delete this from cart?');" class="btn btn-danger" name="delete">
       </div>
-         
    </form>
    <?php
    $grand_total += $sub_total;
       }
    }else{
-      echo '<p class="empty" style="margin-top: 200px ;margin-left: -75px; font-size: 25px; text-align: center;">your cart is empty!</p>';
+      echo '<p class="empty" style="margin-top: 200px ;margin-left: -75px; font-size: 25px; text-align: center; clear: both;">your cart is empty!</p>';
    }
    ?>
    </div>
-
       <div class="" style="clear: both; margin-left: 90px;margin-top: 380px; display: inline-block;">
       <p style="font-size: 24px; margin-bottom: 2px;">grand total : <span><?= $grand_total; ?>dt</span></p>
       <a href="produit.php" class="btn btn-success text-white">continue shopping</a>
       <a href="cart.php?delete_all" class="btn btn-danger text-white <?= ($grand_total > 1)?'':'disabled'; ?>" onclick="return confirm('delete all from cart?');">delete all item</a>
       <a href="checkout.php" class="btn btn-secondary<?= ($grand_total > 1)?'':'disabled'; ?>">proceed to checkout</a>
       </div>
-      
 </section>
-
-
 </html>

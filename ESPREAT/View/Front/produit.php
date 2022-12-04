@@ -28,7 +28,7 @@ input::-webkit-inner-spin-button {
 
    <h1 class="heading" style="margin-left: 500px; margin-bottom: 50px;">Latest Products</h1>
 
-   <div class="box-container" style="margin-left: 100px;">
+   <div class="box-container" style="margin-left: 100px; text-align: center;">
 
    <?php
      $select_products = $db->prepare("SELECT * FROM `produit`"); 
@@ -41,10 +41,10 @@ input::-webkit-inner-spin-button {
       <input type="hidden" name="pid" value="<?= $fetch_product['id']; ?>">
       <input type="hidden" name="name" value="<?= $fetch_product['name']; ?>">
       <input type="hidden" name="price" value="<?= $fetch_product['price']; ?>">
-      <div class="name"><?= $fetch_product['name']; ?></div>
+      <div class="name" style="margin: auto;"><?= $fetch_product['name']; ?></div>
       <div class="flex">
          <div class="price"><span></span><?= $fetch_product['price']; ?><span>dt</span></div>
-         <input type="number" name="quantity" class="form-control form-control-lg custom-form-control col-md-2 " min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1" style="text-align: center; width: 300px;">
+         <input style=" text-align: center;border-color: #6c757d; width: fit-content; margin-top: 25px; margin-left: 40px;" type="number" name="quantity" class="form-control form-control-lg custom-form-control col-md-5 " min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
       </div>
       <input type="submit" value="add to cart" class="btn btn-primary" name="add_to_cart"
       style="margin-top: 10px; margin-bottom: 25px; width: 150px;">
