@@ -44,7 +44,7 @@ if(isset($_GET['delete'])){
 
 
 
-<h1 class="heading" style="margin-left : 350px; margin-top: 20px;">Placed Orders</h1>
+<h1 class="heading" style="margin-left : 350px; margin-top: 40px;">Placed Orders</h1>
 
 <div class="box-container" style="margin-left : 100px;">
 
@@ -54,24 +54,25 @@ if(isset($_GET['delete'])){
       if($select_orders->rowCount() > 0){
          while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
    ?>
-   <div class="box" style="margin-top: 45px;">
+   <div class="box" style="margin-top: 45px;margin-left: 50px; float: left;border: 2px solid #191c24; padding: 28px !important; border-radius: 10px; display: block; background-color: #191c24; position: relative;">
+
       <p> Costumer id : <span><?= $fetch_orders['user_id']; ?></span> </p>
       <p> placed on : <span><?= $fetch_orders['placed_on']; ?></span> </p>
       <p> number : <span><?= $fetch_orders['number']; ?></span> </p>
       <p> bloc : <span><?= $fetch_orders['bloc']; ?></span> </p>
-      <p> total products : <span><?= $fetch_orders['total_products']; ?></span> </p>
+      <p> total products : <span><?= $fetch_orders['total_products'];?></span></p>
       <p> total price : <span><?= $fetch_orders['total_price']; ?>dt</span> </p>
       <form action="" method="post">
-         <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
-         <select name="payment_status" class="form-control form-control-sm custom-form-control col-md-1" style="width: 16%;">
+         <input type="hidden" name="order_id" value="<?= $fetch_orders['id'];?>">
+         <select name="payment_status" class="form-control form-control-sm custom-form-control col-md-1" style="width: 155px; text-align: center; background-color: #2b303e ; border-color: #2b303e; margin-left: 20%;">
             <option selected disabled><?= $fetch_orders['payment_status']; ?></option>
-            <option value="pending">pending</option>
-            <option value="completed">completed</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
          </select>
-        <div class="flex-btn">
-         <input type="submit" value="update" class="btn btn-secondary" name="update_payment" style="margin-top: 20px;">
-         <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" style="margin-top: 20px;" class="btn btn-danger" onclick="return confirm('delete this order?');">delete</a>
-         <p>############################</p>
+        <div class="flex-btn" style="margin-top: 10px; margin-left: 20%;">
+         <input type="submit" value="update" class="btn btn-success" name="update_payment" >
+         <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" class="btn btn-danger" onclick="return confirm('delete this order?');">delete</a>
+
         </div>
       </form>
    </div>

@@ -30,8 +30,7 @@ if(isset($_POST['order'])){
 
       $delete_cart = $db->prepare("DELETE FROM `panier` WHERE user_id = ?");
       $delete_cart->execute([$user_id]);
-
-      echo '<script>alert("order placed successfully!")</script>';
+      header("location:order_success.php");
    }else{
       echo '<script>alert("your cart is empty")</script>';
    }
@@ -100,7 +99,6 @@ if(isset($_POST['order'])){
             <input type="text" name="bloc" placeholder="enter your building name e.g. bloc H" class="form-control form-control-lg custom-form-control col-sm-6 col-md-4" maxlength="50" style="margin-top: 20px ;" pattern="(?=.*[A-Ma-m]).{1}" required>
          </div>
       </div>
-
       <input style="margin-top: 20px ;" type="submit" name="order" class="btn btn-primary <?= ($grand_total > 1)?'':'disabled'; ?>" value="place order">
 
    </form>

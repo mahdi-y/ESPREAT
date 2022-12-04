@@ -6,7 +6,7 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                <a href="index.php" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>ESPREAT</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
@@ -24,8 +24,8 @@
                     <div class="nav-item dropdown">
                        
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Buttons</a>
-                            <a href="typography.html" class="dropdown-item">Typography</a>
+                            <a href="button.php" class="dropdown-item">Buttons</a>
+                            <a href="typography.php" class="dropdown-item">Typography</a>
                             <a href="element.php" class="dropdown-item">Other Elements</a>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="index.php" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">

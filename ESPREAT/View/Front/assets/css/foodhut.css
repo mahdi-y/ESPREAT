@@ -11492,7 +11492,8 @@ pre {
 }
 
 .custom-form-control::placeholder {
-  color: white;
+  color: #5a6268;
+  opacity: 1;
 }
 
 .custom-form-control:focus {

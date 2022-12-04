@@ -33,11 +33,11 @@ $user_id = $_SESSION["identifiant"];
 <?php include 'header.php'; ?>
 <?php include ('navbar-logout.php'); ?>
 
-<section class="orders" style="margin-top: 150px;margin-left: 150px;">
+<section class="orders" style="margin-top: 150px;">
 
-   <h1 class="heading" style="margin-left: 350px;">placed orders</h1>
+   <h1 class="heading" style="margin-left: 500px; margin-bottom: 50px; color: azure;">Placed Orders</h1>
 
-   <div class="box-container">
+   <div class="box-container" style="margin-left: 40px;">
 
    <?php
       if($user_id == ''){
@@ -48,13 +48,13 @@ $user_id = $_SESSION["identifiant"];
          if($select_orders->rowCount() > 0){
             while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
    ?>
-   <div class="box">
+   <div class="box" style="border: 3px solid #575a5e; padding: 20px; width: 30%; float: left; margin-right: 25px;margin-bottom: 25px; background-color: #575a5e; border-radius: 10px;">
       <p>placed on : <span><?= $fetch_orders['placed_on']; ?></span></p>
       <p>number : <span><?= $fetch_orders['number']; ?></span></p>
       <p>bloc : <span><?= $fetch_orders['bloc']; ?></span></p>
       <p>your orders : <span><?= $fetch_orders['total_products']; ?></span></p>
       <p>total price : <span><?= $fetch_orders['total_price']; ?>dt</span></p>
-      <p style="margin-bottom: 45px;"> payment status : <span style="color:<?php if($fetch_orders['payment_status'] == 'pending'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span> </p>
+      <p> payment status : <span style="color:<?php if($fetch_orders['payment_status'] == 'Pending'){ echo 'red'; }else{ echo '#a3c14a'; }; ?>"><?= $fetch_orders['payment_status']; ?></span> </p>
    </div>
    <?php
       }
@@ -67,6 +67,8 @@ $user_id = $_SESSION["identifiant"];
    </div>
 
 </section>
+
+
 
 
 
