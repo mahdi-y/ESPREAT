@@ -10,6 +10,7 @@ include('../../config.php');
 
 <!-- Recent Sales Start -->
 <div class="container-fluid pt-4 px-4">
+  
 
   <?php
 if(isset($_SESSION['message'])) :

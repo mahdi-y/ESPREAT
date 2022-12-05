@@ -98,7 +98,7 @@ echo $e->getMessage();
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="float" class="form-control" name="price" placeholder="price" 
+                            <input type="number" class="form-control" name="price" placeholder="price" 
                             value="<?=$result->price; ?>">
                             <label>price</label>
                         </div>
@@ -121,11 +121,43 @@ echo $e->getMessage();
                             value="<?=$result->description; ?>">
                             <label>description</label>
                         </div>
+                        
                         <div class="form-floating mb-4">
-                            <input type="text" class="form-control" name="fkC" placeholder="category"
-                             value="<?=$result->fkC; ?>">
-                            <label>Category</label>
-                        </div>
+                        
+                        
+
+
+
+
+
+<?php
+
+
+$query = "SELECT * FROM category" ;
+?>
+<select idC=idC nameC=nameC class='form-control' style='width:256px;' name='fkC'>;
+<?php
+$statement = $conn->prepare($query);
+$statement->execute();
+$statement->setFetchMode(PDO::FETCH_OBJ);
+$result = $statement->fetchAll();
+
+foreach($result as $row)
+{
+  ?>
+  
+  <option value=<?=$row->idC;?>><?=$row->nameC;?></option>;
+  <?php
+}
+?>
+   </select>
+ 
+
+
+<label>Category</label>
+
+
+</div>
                         
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4" name="submit">Update product</button>
                        
