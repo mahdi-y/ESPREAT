@@ -24,12 +24,11 @@ function createUser($conn,$nom,$numero,$idA){
     }
 }
 
-function createDonation($conn,$idDon,$identifiantClient,$classe,$gender,$montant,$anonymat){
-    $query ="INSERT INTO donation (idDon,identifiantClient,classe,gender,montant,anonymat) values(:idDon,:identifiantClient,:classe,:gender,:montant,:anonymat);";
+function createDonation($conn,$identifiantClient,$classe,$gender,$montant,$anonymat){
+    $query ="INSERT INTO donation (identifiantClient,classe,gender,montant,anonymat) values(:identifiantClient,:classe,:gender,:montant,:anonymat);";
     $query_run = $conn->prepare($query);
 
     $data = [
-        ':idDon' => $idDon,
         ':identifiantClient' => $identifiantClient,
         ':classe' => $classe,
         ':gender' => $gender,

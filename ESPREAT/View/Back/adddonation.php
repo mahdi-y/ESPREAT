@@ -2,7 +2,7 @@
 include('connect.php');
 include('functions.php');
 if(isset($_POST["submit"])){
-$idDon = $_POST['idDon'];
+//$idDon = $_POST['idDon'];
 $identifiantClient = $_POST['identifiantClient'];
 $classe = $_POST['classe'];
 $gender = $_POST['gender'];
@@ -15,7 +15,7 @@ require_once 'functions.php';
 
 
 
-createDonation($conn,$idDon,$identifiantClient,$classe,$gender,$montant,$anonymat);
+createDonation($conn,$identifiantClient,$classe,$gender,$montant,$anonymat);
 echo "<script>location.href='backtab.php';</script>";
 }
 
@@ -35,12 +35,12 @@ if(isset($_POST["update_donation_btn"])){
 
         $data = [
             
-            'identifiantClient' => $identifiantClient,
-            'classe' => $classe,
-            'gender' => $gender,
-            'montant' => $montant,
-            'anonymat' => $anonymat,
-            'donation_idDon' => $donation_idDon,
+            ':identifiantClient' => $identifiantClient,
+            ':classe' => $classe,
+            ':gender' => $gender,
+            ':montant' => $montant,
+            ':anonymat' => $anonymat,
+            ':dona_idDon' => $donation_idDon,
 
         ];
         $query_execute = $statement->execute($data);
@@ -48,7 +48,7 @@ if(isset($_POST["update_donation_btn"])){
     } catch (PDOException $e){
         echo $e->getMessage();
     }
-    //echo "<script>location.href='backtabdonation.php';</script>";
+    echo "<script>location.href='backtabdonation.php';</script>";
 }
 
 

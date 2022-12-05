@@ -32,11 +32,11 @@
                             <input type="hidden" class="" name="donation_idDon" value="<?= $result->idDon; ?>"> 
                         <div class="form-floating mb-3">
                         
-                            <input type="text" class="form-control" value="<?= $result->identifiantClient; ?>" id="floatingText" placeholder="jhondoe" name="identifiantClient">
+                            <input type="number" class="form-control" value="<?= $result->identifiantClient; ?>" id="floatingText" placeholder="jhondoe" name="identifiantClient">
                             <label for="floatingText">identifiantClient</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="number" class="form-control" value="<?= $result->classe; ?>" id="floatingText" placeholder="jhondoe" name="classe">
+                            <input type="text" class="form-control" value="<?= $result->classe; ?>" id="floatingText" placeholder="jhondoe" name="classe">
                             <label for="floatingText">classe</label>
                         </div>
                         <div class="form-floating mb-3">

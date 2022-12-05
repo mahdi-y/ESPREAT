@@ -14,7 +14,7 @@
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-white">
-                                <th scope="col">id Don</th>
+                                
                                     <th scope="col">id Client</th>
                                     <th scope="col">classe</th>
                                     <th scope="col">sexe</th>
@@ -39,7 +39,7 @@
                                             ?>
                                             
                                             <tr>
-                                                <td><?= $row->idDon; ?></td>
+                                                
                                                 <td><?= $row->identifiantClient; ?></td>
                                                 <td><?= $row->classe; ?></td>
                                                 <td><?= $row->gender; ?></td>

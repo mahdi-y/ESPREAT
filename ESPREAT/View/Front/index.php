@@ -61,6 +61,9 @@
             <a class="nav-link" href="listeassociation.php">Les Associations</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="listedonation.php">Les Dons</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="../Back/backtab.php">Admin space</a>
           </li>
         </ul>

@@ -1,4 +1,3 @@
-
 <?php include('../Back/header.php'); ?>
 
 
@@ -105,20 +104,60 @@
         
       </div>
     </header>
+
+ <div class="card-body">
+    <form action="" method="get">
+        <div class="row">
+            <div class="input-group mb-3">
+                <select name="sort_numeric" class="form-control">
+                    <option value=""> >--Select option--<</option>
+                    <option value="low-high"<?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric']== "low-high" ) { echo "selected";} ?> >low-high</option>
+                    <option value="high-low"<?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric']== "high-low" ) { echo "selected";} ?> >high-low</option>
+
+                </select>
+                <button type="submit" class=""input-group-text btn btn-primary" id="basic-addon2">
+                Filter
+
+                </button>
+
+            </div>
+            
+        </div>
+    </form>
+
+ </div>   
 <div class="table-responsive">
+    
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
-                                <tr class="text-white">
-                                <th scope="col">id association</th>
-                                    <th scope="col">nom</th>
-                                    <th scope="col">numero</th>
+                               
+                                
+                            <tr class="text-white">
+                                
+                                    <th scope="col">id Client</th>
+                                    <th scope="col">classe</th>
+                                    <th scope="col">sexe</th>
+                                    <th scope="col">montant</th>
+                                    
+                                    
                                     
                                     
                                 </tr>
                             </thead>
                             <tbody>
                             <?php
-                                    $query = "Select * from association";
+
+                                    $sort_option = "" ;
+                                    if(isset($_GET['sort_numeric']))
+                                    {
+                                        if($_GET['sort_numeric'] == "low-high"){
+                                            $sort_option = "ASC";
+                                        }
+                                        elseif($_GET['sort_numeric'] == "high-low"){
+                                            $sort_option = "DESC";
+                                        }
+                                    }
+                                    $query = "Select * from donation ORDER BY montant $sort_option";
                                     $statement = $conn->prepare($query);
                                     $statement->execute();
 
@@ -127,21 +166,29 @@
                                     {
                                         foreach($result as $row)
                                         {
+                                            if($row->anonymat == 1)
+                                            {
                                             ?>
+                                             
                                             
                                             <tr>
-                                                <td><?= $row->idA; ?></td>
-                                                <td><?= $row->nom; ?></td>
-                                                <td><?= $row->numero; ?></td>
+                                                
+                                                <td><?= $row->identifiantClient; ?></td>
+                                                <td><?= $row->classe; ?></td>
+                                                <td><?= $row->gender; ?></td>
+                                                <td><?= $row->montant; ?></td>
                                                 
                                                 
-                                           
+                                               
+                                          
                                                 
                                             </tr>
+                                            
                                             <?php 
+                                            }
                                         }
                                     }
-
+                                    
                                     ?>
                                 
                             </tbody>
@@ -153,4 +200,3 @@
                     </body>
 
 </html>
-                        
