@@ -39,7 +39,7 @@ if (isset($_POST["login"])){
         <form action="" method="post">
             <p>
                 <label for="">Identifiant</label>
-                <input type="text" name="identifiant" id="" class="form-control form-control-lg custom-form-control" placeholder="xxx J(M/F)T xxx">
+                <input type="text" name="identifiant" id="" class="form-control form-control-lg custom-form-control">
             </p>
             <button type="submit" name="login" class="btn btn-primary" style="width: 150px;">Login</button>
         </form>

@@ -19,7 +19,7 @@ if(isset($_POST['add_to_cart'])){
    }else{
       $insert_cart = $db->prepare("INSERT INTO `panier`(user_id, pid, name, price, quantity) VALUES(?,?,?,?,?)");
       $insert_cart->execute([$user_id, $pid, $name, $price, $quantity]);
-      echo '<script>alert("added to cart!")</script>';
+      header("location:cart.php");;
       
    }
 

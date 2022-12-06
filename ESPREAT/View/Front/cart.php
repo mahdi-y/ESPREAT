@@ -11,12 +11,12 @@ $user_id = $_SESSION["identifiant"];
 
 if(isset($_POST['delete'])){
    $cart_id = $_POST['cart_id'];
-   $delete_cart_item = $db->prepare("DELETE FROM `panier` WHERE id = ?");
+   $delete_cart_item = $db->prepare("DELETE FROM panier WHERE id = ?");
    $delete_cart_item->execute([$cart_id]);
 }
 
 if(isset($_GET['delete_all'])){
-   $delete_cart_item = $db->prepare("DELETE FROM `panier` WHERE user_id = ?");
+   $delete_cart_item = $db->prepare("DELETE FROM panier WHERE user_id = ?");
    $delete_cart_item->execute([$user_id]);
    header("location:cart.php");
 }
@@ -25,7 +25,7 @@ if(isset($_POST['update_quantity'])){
    $cart_id = $_POST['cart_id'];
    $quantity = $_POST['quantity'];
    $quantity = filter_var($quantity, FILTER_SANITIZE_STRING);
-   $update_quantity = $db->prepare("UPDATE `panier` SET quantity = ? WHERE id = ?");
+   $update_quantity = $db->prepare("UPDATE panier SET quantity = ? WHERE id = ?");
    $update_quantity->execute([$quantity, $cart_id]);
 
 }
@@ -36,17 +36,43 @@ if(isset($_POST['update_quantity'])){
 
 <?php include ('navbar-logout.php'); ?>
 
+ <form action="" method="GET">
+
+<div class="" style="margin-top: 100px ; margin-left: 105px;">
+                  <div class="col-md-4">
+                     <div class="input-group mb-3">
+                        <select name="sort_numeric" class="form-control" >
+                        <option value="">Select Option</option>
+                        <option value="low-high"<?php if (isset($_GET['sort_numeric']) && $_GET ['sort_numeric']=="low-high" ) {echo "selected";}?>>Low - High</option>
+                        <option value="high-low"<?php if (isset($_GET['sort_numeric']) && $_GET ['sort_numeric']=="high-low" ) {echo "selected";}?>>High - Low</option>
+  </select>
+  <button type ="submit" class="btn btn-primary btn-sm float-end" >Filter</
+  </button>
+  </div>
+  </div>
+  </div>
+</form>
 
     <section class="" style="margin-left: 45px;">
    <div class="container" style="margin-top: 140px; ">
    <?php
+
+$sort_option = "";
+  if (isset($_GET['sort_numeric']))
+  {
+    if ($_GET['sort_numeric'] == "low-high") 
+    {$sort_option = "ASC";}
+    elseif($_GET['sort_numeric'] == "high-low")  {
+      $sort_option = "DESC"; }
+  }
+
       $grand_total = 0;
-      $select_cart = $db->prepare("SELECT * FROM `panier` WHERE user_id = ?");
+      $select_cart = $db->prepare("SELECT * FROM panier  WHERE user_id = ? ORDER BY panier.price $sort_option");
       $select_cart->execute([$user_id]);
       if($select_cart->rowCount() > 0){
          while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)){
    ?>
-   <div class="sub-box" style="float: left; margin-right: 30px; overflow: hidden; border: 2px solid #575a5e; padding: 16px; background-color: #575a5e; border-radius: 10px;">
+   <div class="sub-box" style="float: left; margin-right: 30px; overflow: hidden; border: 2px solid #575a5e; padding: 16px; background-color: #575a5e; border-radius: 10px; margin-top: -90px;">
    <form action="" method="post"  autocomplete="off">
       <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
       <div class="name" style="text-align: center; font-size: 20px;"><?= $fetch_cart['name']; ?></div>
@@ -61,11 +87,11 @@ if(isset($_POST['update_quantity'])){
    $grand_total += $sub_total;
       }
    }else{
-      echo '<p class="empty" style="margin-top: 200px ;margin-left: -75px; font-size: 25px; text-align: center; clear: both;">your cart is empty!</p>';
+      echo '<p class="empty" style="margin-top: -150px ;margin-left: -75px; font-size: 25px; text-align: center; clear: both;">your cart is empty!</p>';
    }
    ?>
    </div>
-      <div class="" style="clear: both; margin-left: 90px;margin-top: 380px; display: inline-block;">
+      <div class="" style="clear: both; margin-left: 90px;margin-top: 300px; display: inline-block;">
       <p style="font-size: 24px; margin-bottom: 2px;">grand total : <span><?= $grand_total; ?>dt</span></p>
       <a href="produit.php" class="btn btn-success text-white">continue shopping</a>
       <a href="cart.php?delete_all" class="btn btn-danger text-white <?= ($grand_total > 1)?'':'disabled'; ?>" onclick="return confirm('delete all from cart?');">delete all item</a>
