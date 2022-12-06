@@ -2,6 +2,7 @@
 
 
 <?php include('../Back/connect.php'); ?>
+<?php include('../Back/functions.php'); ?>
 
 <!-- Recent Sales Start -->
 <!DOCTYPE html>
@@ -104,7 +105,9 @@
         
       </div>
     </header>
-
+    <form action="frontdonation.php" method="post">
+                <button type="submit" name="submit" class="btn btn-primary py-3 w-100 mb-4" >add donation</button>
+                </form>
  <div class="card-body">
     <form action="" method="get">
         <div class="row">
@@ -115,6 +118,7 @@
                     <option value="high-low"<?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric']== "high-low" ) { echo "selected";} ?> >high-low</option>
 
                 </select>
+                
                 <button type="submit" class=""input-group-text btn btn-primary" id="basic-addon2">
                 Filter
 

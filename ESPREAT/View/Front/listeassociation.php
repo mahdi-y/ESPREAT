@@ -105,7 +105,8 @@
         
       </div>
     </header>
-<div class="table-responsive">
+<div class="table-responsive" >
+  
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-white">
