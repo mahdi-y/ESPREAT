@@ -38,7 +38,7 @@ if(isset($_POST['update_quantity'])){
 
  <form action="" method="GET">
 
-<div class="" style="margin-top: 100px ; margin-left: 105px;">
+<div class="" style="margin-top: 100px ; margin-left: 110px;">
                   <div class="col-md-4">
                      <div class="input-group mb-3">
                         <select name="sort_numeric" class="form-control" >
@@ -46,7 +46,7 @@ if(isset($_POST['update_quantity'])){
                         <option value="low-high"<?php if (isset($_GET['sort_numeric']) && $_GET ['sort_numeric']=="low-high" ) {echo "selected";}?>>Low - High</option>
                         <option value="high-low"<?php if (isset($_GET['sort_numeric']) && $_GET ['sort_numeric']=="high-low" ) {echo "selected";}?>>High - Low</option>
   </select>
-  <button type ="submit" class="btn btn-primary btn-sm float-end" >Filter</
+  <button type ="submit" class="btn btn-primary btn-sm float-end"style="margin-left: 10px;">Filter</
   </button>
   </div>
   </div>
@@ -87,7 +87,7 @@ $sort_option = "";
    $grand_total += $sub_total;
       }
    }else{
-      echo '<p class="empty" style="margin-top: -150px ;margin-left: -75px; font-size: 25px; text-align: center; clear: both;">your cart is empty!</p>';
+      echo '<p class="empty" style="margin-top: -100px ;margin-left: -75px; font-size: 25px; text-align: center; clear: both;">your cart is empty!</p>';
    }
    ?>
    </div>
