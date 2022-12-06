@@ -1,98 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta
-      name="description"
-      content="Start your development with FoodHut landing page."
-    />
-    <meta name="author" content="Devcrud" />
-    <title>ESPREAT</title>
-
-    <!-- font icons -->
-    <link
-      rel="stylesheet"
-      href="assets/vendors/themify-icons/css/themify-icons.css"
-    />
-
-    <link rel="stylesheet" href="assets/vendors/animate/animate.css" />
-
-    <!-- Bootstrap + FoodHut main styles -->
-    <link rel="stylesheet" href="assets/css/foodhut.css" />
-  </head>
-  <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <!-- Navbar -->
-    <nav
-      class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top"
-      data-spy="affix"
-      data-offset-top="10"
-    >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#gallary">Gallary</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#book-table">Collection Point</a>
-          </li>
-        </ul>
-        <a class="navbar-brand m-auto" href="#">
-          <img src="assets/imgs/logo.png" class="brand-img" alt="" />
-          <span class="brand-txt">ESPREAT</span>
-        </a>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#blog"
-              >Hits<span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#testmonial">Reviews</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a
-              href="/ESPREAT/View/Back/index.html"
-              class="btn btn-primary ml-xl-4"
-              >Login</a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- header -->
-    <header id="home" class="header">
-      <div class="overlay text-white text-center">
-        <h1 class="display-2 font-weight-bold my-3">
-          ESPR<span style="color: #ed1f24">E</span>AT
-        </h1>
-        <h2 class="display-4 mb-5">Manger Autrement</h2>
-        <a class="btn btn-lg btn-primary" href="#gallary">View Our gallary</a>
-      </div>
-    </header>
+<?php
+include '../../config.php';
+include 'header.php';
+?>
+<!--<p>Translate this page in your preferred language:</p>-->
+<div id="google_translate_element"></div> 
+    <script type="text/javascript"> 
+    function googleTranslateElementInit() { 
+      new google.translate.TranslateElement({pageLanguage: 'fr'},'google_translate_element'); 
+    } 
+    </script> 
+    <script type="text/javascript"src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
+   <!--   <p>Vous pouvez traduire le contenu de cette page en sélectionnant une langue dans le menu déroulant.</p>-->
 
     <!--  About Section  -->
     <div
@@ -106,7 +24,7 @@
         <div class="col-lg-6">
           <div class="row justify-content-center">
             <div class="col-sm-8 py-5 my-5">
-              <h2 class="mb-4">About Us</h2>
+              <h2 class="mb-4">ABOUT US</h2>
               <p>
                 On a remarqué que notre école présente des problèmes majeurs au
                 niveau de cet sujet. <br /><br />
@@ -129,357 +47,298 @@
       id="gallary"
       class="text-center bg-dark text-light has-height-md middle-items wow fadeIn"
     >
-      <h2 class="section-title"><a href="listcategories.php">OUR MENU</a></h2>
+    <h2 class="section-title py-5">OUR MENU</h2>
     </div>
-    <div class="gallary row">
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-1.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-2.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-3.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-4.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-5.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-6.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-7.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-8.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-9.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-10.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-11.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-12.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-    </div>
+   
+    
+      <div class="container">
+        <div class="row">
 
-    <!-- book a table Section  -->
-    <div
-      class="container-fluid has-bg-overlay text-center text-light has-height-lg middle-items"
-      id="book-table"
-    >
-      <div class="">
-        <h2 class="section-title mb-5">Closest collection point</h2>
-        <div class="row mb-5">
-          <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-            <input
-              type="email"
-              id="booktable"
-              class="form-control form-control-lg custom-form-control"
-              placeholder="EMAIL"
-            />
-          </div>
-          <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-            <input
-              type="text"
-              id="booktable"
-              class="form-control form-control-lg custom-form-control"
-              placeholder="IDENTIFIANT"
-            />
-          </div>
-          <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-            <input
-              type="time"
-              id="booktable"
-              class="form-control form-control-lg custom-form-control"
-            />
-          </div>
-          <div class="col-sm-6 col-md-3 col-xs-12 my-2">
-            <input
-              type="text"
-              id="booktable"
-              class="form-control form-control-lg custom-form-control"
-              placeholder="BLOC"
-            />
-          </div>
-        </div>
-        <a href="#" class="btn btn-lg btn-primary" id="rounded-btn"
-          >Find Collection Point</a
-        >
-      </div>
-    </div>
 
-    <!-- BLOG Section  -->
-    <div
+
+<!-- Brand List  -->
+<div class="col-md-4">
+                <form action="" method="GET">
+                  
+                    <div class="card bg-transparent mt-3">
+                        <div class="card-header">
+                            <h5>Select a category 
+                              
+                                <button type="submit" class="btn btn-primary btn-sm float-end">Select</button>
+
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <h6>Category list</h6>
+                            <hr>
+
+                            
+
+
+  <?php
+
+$query = "SELECT * FROM category" ;
+$statement = $conn->prepare($query);
+$statement->execute();
+$statement->setFetchMode(PDO::FETCH_OBJ);
+$result = $statement->fetchAll();
+if($result)
+{
+foreach($result as $row)
+{
+ 
+  $checked = [];
+  if(isset($_GET['fkC']))
+  {
+    $checked = $_GET['fkC'];
+  }
+
+?>
+
+
+<div>
+
+
+        <input type ="checkbox"  name="fkC[]" value = "<?=$row->idC;?>" 
+
+           <?php if(in_array ($row->idC,(array)$checked)) 
+          {echo "checked";}?>
+          />
+
+<?=$row->nameC;?> 
+</div>
+
+
+       
+      <?php
+}
+}
+else
+{
+
+  ?>
+  <tr>
+    <td colspan="2"->No Product Found for </td>
+</tr> 
+
+  <?php
+
+}
+
+?>
+
+</div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                    <div class="col-md-10">
+                      <div class="input-group mb-3">
+                        <select name="sort_numeric" class="form-control" >
+                          <option value="">Select Option</option>
+                          <option value="low-high"<?php if (isset($_GET['sort_numeric']) && $_GET ['sort_numeric']=="low-high" ) {echo "selected";}?>>Low - High</option>
+                          <option value="high-low"<?php if (isset($_GET['sort_numeric']) && $_GET ['sort_numeric']=="high-low" ) {echo "selected";}?>>High - Low</option>
+  </select>
+  <button type ="submit" class="btn btn-primary btn-sm float-end" >Filter</
+  </button>
+  </div>
+  </div>
+  </div>
+                </form>
+           
+</div>
+
+
+
+<div
       id="blog"
       class="container-fluid bg-dark text-light py-5 text-center wow fadeIn"
     >
-      <h2 class="section-title py-5">What everybody is getting</h2>
-      <div class="row justify-content-center">
-        <div class="col-sm-7 col-md-4 mb-5">
-          <ul
-            class="nav nav-pills nav-justified mb-3"
-            id="pills-tab"
-            role="tablist"
-          >
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                id="pills-home-tab"
-                data-toggle="pill"
-                href="#foods"
-                role="tab"
-                aria-controls="pills-home"
-                aria-selected="true"
-                >Foods</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                id="pills-profile-tab"
-                data-toggle="pill"
-                href="#juices"
-                role="tab"
-                aria-controls="pills-profile"
-                aria-selected="false"
-                >Drinks</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="tab-content" id="pills-tabContent">
-        <div
-          class="tab-pane fade show active"
-          id="foods"
-          role="tabpanel"
-          aria-labelledby="pills-home-tab"
-        >
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card bg-transparent border my-3 my-md-0">
-                <img
-                  src="assets/imgs/blog-1.jpg"
-                  alt="template by DevCRID http://www.devcrud.com/"
-                  class="rounded-0 card-img-top mg-responsive"
-                />
-                <div class="card-body">
-                  <h1 class="text-center mb-4">
-                    <a href="#" class="badge badge-primary">4.5dt</a>
-                  </h1>
-                  <h4 class="pt20 pb20">Tranche de pizza</h4>
-                  <p class="text-white">
-                    Le secret d'une pizza réussie réside avant tout dans la
-                    qualité de sa pâte. Composée de produits 100% bio.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card bg-transparent border my-3 my-md-0">
-                <img
-                  src="assets/imgs/blog-2.jpg"
-                  alt="template by DevCRID http://www.devcrud.com/"
-                  class="rounded-0 card-img-top mg-responsive"
-                />
-                <div class="card-body">
-                  <h1 class="text-center mb-4">
-                    <a href="#" class="badge badge-primary">3.5dt</a>
-                  </h1>
-                  <h4 class="pt20 pb20">Soufflé</h4>
-                  <p class="text-white">
-                    Une magnifique recette de Soufflés genre Sandwichs, à base
-                    d'une pâte super légère et moelleuse et une farce de blanc
-                    de poulet, oignons et fromages.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card bg-transparent border my-3 my-md-0">
-                <img
-                  src="assets/imgs/blog-3.jpg"
-                  alt="template by DevCRID http://www.devcrud.com/"
-                  class="rounded-0 card-img-top mg-responsive"
-                />
-                <div class="card-body">
-                  <h1 class="text-center mb-4">
-                    <a href="#" class="badge badge-primary">4dt</a>
-                  </h1>
-                  <h4 class="pt20 pb20">Sandwich au Jambon</h4>
-                  <p class="text-white">
-                    Deux tranches de très bon pain, des ingrédients frais...
-                    jambon, fromage, crudités, sauces, condiments... et c'est
-                    prêt !
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="tab-pane fade"
-          id="juices"
-          role="tabpanel"
-          aria-labelledby="pills-profile-tab"
-        >
-          <div class="row">
-            <div class="col-md-4 my-3 my-md-0">
-              <div class="card bg-transparent border">
-                <img
-                  src="assets/imgs/blog-4.jpg"
-                  alt="template by DevCRID http://www.devcrud.com/"
-                  class="rounded-0 card-img-top mg-responsive"
-                />
-                <div class="card-body">
-                  <h1 class="text-center mb-4">
-                    <a href="#" class="badge badge-primary">1.4dt</a>
-                  </h1>
-                  <h4 class="pt20 pb20">Café Direct</h4>
-                  <p class="text-white">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Culpa provident illum officiis fugit laudantium voluptatem
-                    sit iste delectus qui ex.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 my-3 my-md-0">
-              <div class="card bg-transparent border">
-                <img
-                  src="assets/imgs/blog-5.jpg"
-                  alt="template by DevCRID http://www.devcrud.com/"
-                  class="rounded-0 card-img-top mg-responsive"
-                />
-                <div class="card-body">
-                  <h1 class="text-center mb-4">
-                    <a href="#" class="badge badge-primary">1dt</a>
-                  </h1>
-                  <h4 class="pt20 pb20">Déli'o menthe</h4>
-                  <p class="text-white">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Culpa provident illum officiis fugit laudantium voluptatem
-                    sit iste delectus qui ex.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 my-3 my-md-0">
-              <div class="card bg-transparent border">
-                <img
-                  src="assets/imgs/blog-6.jpg"
-                  alt="template by DevCRID http://www.devcrud.com/"
-                  class="rounded-0 card-img-top mg-responsive"
-                />
-                <div class="card-body">
-                  <h1 class="text-center mb-4">
-                    <a href="#" class="badge badge-primary">2dt</a>
-                  </h1>
-                  <h4 class="pt20 pb20">Jus d'orange</h4>
-                  <p class="text-white">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Culpa provident illum officiis fugit laudantium voluptatem
-                    sit iste delectus qui ex.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+    
+      
+<?php
+
+if(isset($_GET['fkC']))
+{
+  $checked = [];
+  $checked =$_GET['fkC'];
+
+  foreach((array)$checked as $row)
+  {
+    $query = "SELECT * FROM product WHERE fkC IN ($row)" ;
+$statement = $conn->prepare($query);
+$statement->execute();
+$statement->setFetchMode(PDO::FETCH_OBJ);
+$result = $statement->fetchAll();
+
+if($result)
+{
+  
+foreach($result as $row)
+{
+
+?>
+
+
+<div class="tab-content" id="pills-tabContent">
+<div
+  class="tab-pane fade show active"
+  id="foods"
+  role="tabpanel"
+  aria-labelledby="pills-home-tab">
+
+  <div class="row justify-content-center">
+        <div class="column">
+  
+  
+      <div class="card bg-transparent border my-3 my-md-0">
+
+      <div class="container">
+
+
+     <img height="300" width="345" src="../Back/img/<?=$row->image;?> " alt=""
+     class="rounded-0 card-img-top mg-responsive">
+      
+        <div class="card-body">
+         <h1 class="text-center mb-4">
+            <a href="#" class="badge badge-primary"><?=$row->price;?> DT</a>
+          </h1>
+          <h4 class="pt20 pb20"><?=$row->nameP;?></h4>
+      <p class="text-white">
+          <?=$row->description;?>
+          </p>
+         
+          
         </div>
       </div>
     </div>
+    </div>
+   
+  
+          
+
+
+                                
+       
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br> 
+
+
+            <?php
+}
+}
+else
+{
+
+?>
+<tr>
+<td colspan="4"-> No product found</td>
+</tr> 
+
+<?php
+
+}
+
+  }
+}
+
+else
+{
+  $sort_option = "";
+  if (isset($_GET['sort_numeric']))
+  {
+    if ($_GET['sort_numeric'] == "low-high") 
+    {$sort_option = "ASC";}
+    elseif($_GET['sort_numeric'] == "high-low")  {
+      $sort_option = "DESC"; }
+  }
+$query = "SELECT * FROM product ORDER BY product.price $sort_option" ;
+$statement = $conn->prepare($query);
+$statement->execute();
+$statement->setFetchMode(PDO::FETCH_OBJ);
+$result = $statement->fetchAll();
+if($result)
+{
+  
+foreach($result as $row)
+{
+
+?>
+
+
+<div class="tab-content" id="pills-tabContent">
+<div
+  class="tab-pane fade show active"
+  id="foods"
+  role="tabpanel"
+  aria-labelledby="pills-home-tab">
+
+  <div class="row justify-content-center">
+        <div class="column">
+  
+  
+      <div class="card bg-transparent border my-3 my-md-0">
+
+      <div class="container">
+
+
+     <img height="300" width="345" src="../Back/img/<?=$row->image;?> " alt=""
+     class="rounded-0 card-img-top mg-responsive">
+      
+        <div class="card-body">
+         <h1 class="text-center mb-4">
+            <a href="#" class="badge badge-primary"><?=$row->price;?> DT</a>
+          </h1>
+          <h4 class="pt20 pb20"><?=$row->nameP;?></h4>
+      <p class="text-white">
+          <?=$row->description;?>
+          </p>
+         
+          
+        </div>
+      </div>
+    </div>
+    </div>
+   
+  
+          
+
+
+                                
+       
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br> 
+
+
+            <?php
+}
+}
+else
+{
+
+?>
+<tr>
+<td colspan="4"->No Record Found></td>
+</tr> 
+<?php
+
+}
+}
+?>
+
+    <!-- book a table Section  -->
+    
+
+    <!-- BLOG Section  -->
+    
 
     <!-- REVIEWS Section  -->
     <div
@@ -499,8 +358,8 @@
         </div>
         <div class="col-md-4 my-3 my-md-0">
           <div class="testmonial-card">
-            <h3 class="testmonial-title">Saloun Ben Yahya</h3>
-            <h6 class="testmonial-subtitle">Professeuse</h6>
+            <h3 class="testmonial-title">Mahdi Zalila</h3>
+            <h6 class="testmonial-subtitle">Enseignant</h6>
             <div class="testmonial-body">
               <p>
                 Can't believe how organized and well made this interface is.
@@ -510,7 +369,7 @@
         </div>
         <div class="col-md-4 my-3 my-md-0">
           <div class="testmonial-card">
-            <h3 class="testmonial-title">Rayen Fathallah</h3>
+            <h3 class="testmonial-title">Amen Allah Laouini</h3>
             <h6 class="testmonial-subtitle">Étudiant</h6>
             <div class="testmonial-body">
               <p>Simple, fast and clean. This is a big step for our school.</p>
@@ -550,47 +409,6 @@
       </div>
     </div>
 
-    <!-- page footer  -->
-    <div
-      class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn"
-    >
-      <div class="row">
-        <div class="col-sm-4">
-          <h3>EMAIL US</h3>
-          <p class="text-muted">contact@espreat.tn</p>
-        </div>
-        <div class="col-sm-4">
-          <h3>CALL US</h3>
-          <p class="text-muted">(216) 70-255-255</p>
-        </div>
-        <div class="col-sm-4">
-          <h3>FIND US</h3>
-          <p class="text-muted">
-            2083 Cebalat Ben Ammar ST Fethi Zouhir, Tunis
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- end of page footer -->
-
-    <!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- bootstrap affix -->
-    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-
-    <!-- wow.js -->
-    <script src="assets/vendors/wow/wow.js"></script>
-
-    <!-- google maps -->
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"
-    ></script>
-
-    <!-- FoodHut js -->
-    <script src="assets/js/foodhut.js"></script>
-  </body>
-</html>
+    <?php
+include 'footer.php';
+?>

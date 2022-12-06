@@ -91,7 +91,7 @@
           ESPR<span style="color: #ed1f24">E</span>AT
         </h1>
         <h2 class="display-4 mb-5">Manger Autrement</h2>
-        
+        <a class="btn btn-lg btn-primary" href="#gallary">VIEW OUR MENU</a>
       </div>
     </header>
     

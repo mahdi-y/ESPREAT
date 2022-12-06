@@ -5,6 +5,8 @@ include '../../config.php';
 include 'header.php';
 ?>
 
+
+
     <div id="blog" class="container-fluid bg-dark text-light py-5 text-center wow fadeIn">
       <h2 class="section-title py-5">OUR MENU</h2>
 </div>
@@ -17,10 +19,13 @@ include 'header.php';
 <!-- Brand List  -->
 <div class="col-md-4">
                 <form action="" method="GET">
+                  
                     <div class="card bg-transparent mt-3">
                         <div class="card-header">
                             <h5>Select a category 
+                              
                                 <button type="submit" class="btn btn-primary btn-sm float-end">Select</button>
+
                             </h5>
                         </div>
                         <div class="card-body">
@@ -85,7 +90,20 @@ else
 </div>
 
                     </div>
-                    
+                    <br>
+                    <div class="row">
+                    <div class="col-md-10">
+                      <div class="input-group mb-3">
+                        <select name="sort_numeric" class="form-control" >
+                          <option value="">Select Option</option>
+                          <option value="low-high"<?php if (isset($_GET['sort_numeric']) && $_GET ['sort_numeric']=="low-high" ) {echo "selected";}?>>Low - High</option>
+                          <option value="high-low"<?php if (isset($_GET['sort_numeric']) && $_GET ['sort_numeric']=="high-low" ) {echo "selected";}?>>High - Low</option>
+  </select>
+  <button type ="submit" class="btn btn-primary btn-sm float-end" >Filter</
+  </button>
+  </div>
+  </div>
+  </div>
                 </form>
            
 </div>
@@ -190,7 +208,15 @@ else
 
 else
 {
-$query = "SELECT * FROM product" ;
+  $sort_option = "";
+  if (isset($_GET['sort_numeric']))
+  {
+    if ($_GET['sort_numeric'] == "low-high") 
+    {$sort_option = "ASC";}
+    elseif($_GET['sort_numeric'] == "high-low")  {
+      $sort_option = "DESC"; }
+  }
+$query = "SELECT * FROM product ORDER BY product.price $sort_option" ;
 $statement = $conn->prepare($query);
 $statement->execute();
 $statement->setFetchMode(PDO::FETCH_OBJ);
@@ -267,6 +293,7 @@ else
 }
 }
 ?>
+
 
 
 
