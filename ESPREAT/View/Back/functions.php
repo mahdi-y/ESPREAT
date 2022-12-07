@@ -39,13 +39,13 @@ function createDonation($conn,$identifiantClient,$classe,$gender,$montant,$anony
     if($query_execute)
     {
         
-        header('Location: backtabdonation.php');
+        header('Location: ../Front/listedonation.php');
         exit(0);
     }
     else
     {
         
-        header('Location: backtabdonation.php');
+        header('Location: ../Front/listedonation.php');
         exit(0);
     }
 }

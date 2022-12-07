@@ -40,6 +40,10 @@
                             <div class="form-check">
                        
                         <button type="submit" name="submit" class="btn btn-primary py-3 w-100 mb-4">add donation</button>
+                        <input type="hidden" name="button_pressed" value="1" />
+
+                    
+
                         
                     </div>
                 </div>

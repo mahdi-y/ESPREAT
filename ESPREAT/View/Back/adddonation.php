@@ -16,7 +16,7 @@ require_once 'functions.php';
 
 
 createDonation($conn,$identifiantClient,$classe,$gender,$montant,$anonymat);
-echo "<script>location.href='backtabdonation.php';</script>";
+
 }
 
 
