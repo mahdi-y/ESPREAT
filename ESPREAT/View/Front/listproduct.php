@@ -5,17 +5,7 @@ include 'header.php';
 
 <?php include('navbar.php'); ?>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <!-- header -->
-    <header id="home" class="header">
-      <div class="overlay text-white text-center">
-        <h1 class="display-2 font-weight-bold my-3">
-          ESPR<span style="color: #ed1f24">E</span>AT
-        </h1>
-        <h2 class="display-4 mb-5">Manger Autrement</h2>
-        <a class="btn btn-lg btn-primary" href="#gallary">View Our gallary</a>
-      </div>
-    </header>
+
     
   <!--<p>Translate this page in your preferred language:</p>-->
 <div id="google_translate_element"></div> 
@@ -319,73 +309,6 @@ else
 
 
 
-<div
-      id="testmonial"
-      class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items"
-    >
-      <h2 class="section-title my-5 text-center">REVIEWS</h2>
-      <div class="row mt-3 mb-5">
-        <div class="col-md-4 my-3 my-md-0">
-          <div class="testmonial-card">
-            <h3 class="testmonial-title">Iheb Souissi</h3>
-            <h6 class="testmonial-subtitle">Étudiant</h6>
-            <div class="testmonial-body">
-              <p>Time and energy saving project, kudos to the creators</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 my-3 my-md-0">
-          <div class="testmonial-card">
-            <h3 class="testmonial-title">Mahdi Zalila</h3>
-            <h6 class="testmonial-subtitle">Enseignant</h6>
-            <div class="testmonial-body">
-              <p>
-                Can't believe how organized and well made this interface is.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 my-3 my-md-0">
-          <div class="testmonial-card">
-            <h3 class="testmonial-title">Amen Allah Laouini</h3>
-            <h6 class="testmonial-subtitle">Étudiant</h6>
-            <div class="testmonial-body">
-              <p>Simple, fast and clean. This is a big step for our school.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONTACT Section  -->
-    <div
-      id="contact"
-      class="container-fluid bg-dark text-light border-top wow fadeIn"
-    >
-      <div class="row">
-        <div class="col-md-6 px-0">
-          <div
-            id="map"
-            style="width: 100%; height: 100%; min-height: 400px"
-          ></div>
-        </div>
-        <div class="col-md-6 px-5 has-height-lg middle-items">
-          <h3>FIND US</h3>
-          <p>
-            Come check out our headquarters and take a look on how we manage to
-            keep the logistics going!
-          </p>
-          <div class="text-muted">
-            <p>
-              <span class="ti-location-pin pr-3"></span> 2083 Cebalat Ben Ammar
-              ST Fethi Zouhir, Tunis
-            </p>
-            <p><span class="ti-support pr-3"></span> (216) 70-255-255</p>
-            <p><span class="ti-email pr-3"></span>contact@espreat.tn</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
     <!-- page footer  -->
