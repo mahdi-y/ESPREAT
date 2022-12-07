@@ -1,9 +1,12 @@
 <?php
+include '../../config.php';
 include ('header.php');
+include('insert_cart.php');
 ?>
 
 <?php include('navbar.php'); ?>
-  <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
     <!-- header -->
     <header id="home" class="header">
       <div class="overlay text-white text-center">
@@ -14,6 +17,16 @@ include ('header.php');
         <a class="btn btn-lg btn-primary" href="#gallary">View Our gallary</a>
       </div>
     </header>
+    
+  <!--<p>Translate this page in your preferred language:</p>-->
+<div id="google_translate_element"></div> 
+    <script type="text/javascript"> 
+    function googleTranslateElementInit() { 
+      new google.translate.TranslateElement({pageLanguage: 'fr'},'google_translate_element'); 
+    } 
+    </script> 
+    <script type="text/javascript"src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
+   <!--   <p>Vous pouvez traduire le contenu de cette page en sélectionnant une langue dans le menu déroulant.</p>-->
 
     <!--  About Section  -->
     <div
@@ -27,7 +40,7 @@ include ('header.php');
         <div class="col-lg-6">
           <div class="row justify-content-center">
             <div class="col-sm-8 py-5 my-5">
-              <h2 class="mb-4">About Us</h2>
+              <h2 class="mb-4">ABOUT US</h2>
               <p>
                 On a remarqué que notre école présente des problèmes majeurs au
                 niveau de cet sujet. <br /><br />
@@ -50,314 +63,306 @@ include ('header.php');
       id="gallary"
       class="text-center bg-dark text-light has-height-md middle-items wow fadeIn"
     >
-      <h2 class="section-title">OUR MENU</h2>
+    <h2 class="section-title py-5">OUR MENU</h2>
     </div>
-    <div class="gallary row">
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-1.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-2.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-3.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-4.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-5.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-6.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-7.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-8.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-9.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-10.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-11.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
-      </div>
-      <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img
-          src="assets/imgs/gallary-12.jpg"
-          alt="template by DevCRID http://www.devcrud.com/"
-          class="gallary-img"
-        />
-        <a href="#" class="gallary-overlay">
-          <i class="gallary-icon ti-plus"></i>
-        </a>
+   
+    
+      <div class="container">
+        <div class="row">
+
+
+
+<!-- Brand List  -->
+<div class="col-md-4">
+                <form action="" method="GET">
+                  
+                    <div class="card bg-transparent mt-3">
+                        <div class="card-header">
+                            <h5>Select a category 
+                              
+                                <button type="submit" class="btn btn-primary btn-sm float-end">Select</button>
+
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <h6>Category list</h6>
+                            <hr>
+
+                            
+
+
+  <?php
+
+$query = "SELECT * FROM category" ;
+$statement = $conn->prepare($query);
+$statement->execute();
+$statement->setFetchMode(PDO::FETCH_OBJ);
+$result = $statement->fetchAll();
+if($result)
+{
+foreach($result as $row)
+{
+ 
+  $checked = [];
+  if(isset($_GET['fkC']))
+  {
+    $checked = $_GET['fkC'];
+  }
+
+?>
+
+
+<div>
+
+
+        <input type ="checkbox"  name="fkC[]" value = "<?=$row->idC;?>" 
+
+           <?php if(in_array ($row->idC,(array)$checked)) 
+          {echo "checked";}?>
+          />
+
+<?=$row->nameC;?> 
+</div>
+
+
+       
+      <?php
+}
+}
+else
+{
+
+  ?>
+  <tr>
+    <td colspan="2"->No Product Found for </td>
+</tr> 
+
+  <?php
+
+}
+
+?>
+
+</div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                    <div class="col-md-10">
+                      <div class="input-group mb-3">
+                        <select name="sort_numeric" class="form-control" >
+                          <option value="">Select Option</option>
+                          <option value="low-high"<?php if (isset($_GET['sort_numeric']) && $_GET ['sort_numeric']=="low-high" ) {echo "selected";}?>>Low - High</option>
+                          <option value="high-low"<?php if (isset($_GET['sort_numeric']) && $_GET ['sort_numeric']=="high-low" ) {echo "selected";}?>>High - Low</option>
+  </select>
+  <button type ="submit" class="btn btn-primary btn-sm float-end" >Filter</
+  </button>
+  </div>
+  </div>
+  </div>
+                </form>
+           
+</div>
+
+
+
+<div
+      id="blog"
+      class="container-fluid bg-dark text-light py-5 text-center wow fadeIn"
+    >
+    
+      
+<?php
+
+if(isset($_GET['fkC']))
+{
+  $checked = [];
+  $checked =$_GET['fkC'];
+
+  foreach((array)$checked as $row)
+  {
+    $query = "SELECT * FROM product WHERE fkC IN ($row)" ;
+$statement = $conn->prepare($query);
+$statement->execute();
+$statement->setFetchMode(PDO::FETCH_OBJ);
+$result = $statement->fetchAll();
+
+if($result)
+{
+  
+foreach($result as $row)
+{
+
+?>
+
+
+<div class="tab-content" id="pills-tabContent">
+<div
+  class="tab-pane fade show active"
+  id="foods"
+  role="tabpanel"
+  aria-labelledby="pills-home-tab">
+
+  <div class="row justify-content-center">
+        <div class="column">
+  
+  
+      <div class="card bg-transparent border my-3 my-md-0">
+
+      <div class="container">
+      <form action="" method="post" class="box" autocomplete="off"> 
+          
+
+     <img height="225" width="150" src="../Back/img/<?=$row->image;?> " alt=""
+     class="rounded-0 card-img-top mg-responsive">
+      
+        <div class="card-body">
+        
+          <h3 class="pt20 pb20"><?=$row->nameP;?></h3>
+
+          <h4 class="pt20 pb20"><?=$row->price;?> DT</h4>
+
+      <p class="text-white">
+          <?=$row->description;?>
+          </p>
+         
+          <input type="submit" value="Add to cart" class="btn btn-primary" name="add_to_cart"
+      style="margin-top: 10px; margin-bottom: 25px; width: 150px;">
+          </form>
+        </div>
       </div>
     </div>
+    </div>
+   
+  
+          
+
+
+                                
+       
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br> 
+
+
+            <?php
+}
+}
+else
+{
+
+?>
+<tr>
+<td colspan="4"-> No product found</td>
+</tr> 
+
+<?php
+
+}
+
+  }
+}
+
+else
+{
+  $sort_option = "";
+  if (isset($_GET['sort_numeric']))
+  {
+    if ($_GET['sort_numeric'] == "low-high") 
+    {$sort_option = "ASC";}
+    elseif($_GET['sort_numeric'] == "high-low")  {
+      $sort_option = "DESC"; }
+  }
+$query = "SELECT * FROM product ORDER BY product.price $sort_option" ;
+$statement = $conn->prepare($query);
+$statement->execute();
+$statement->setFetchMode(PDO::FETCH_OBJ);
+$result = $statement->fetchAll();
+if($result)
+{
+  
+foreach($result as $row)
+{
+
+?>
+
+
+<div class="tab-content" id="pills-tabContent">
+<div
+  class="tab-pane fade show active"
+  id="foods"
+  role="tabpanel"
+  aria-labelledby="pills-home-tab">
+
+  <div class="row justify-content-center">
+        <div class="column">
+  
+  
+      <div class="card bg-transparent border my-3 my-md-0">
+
+      <div class="container">
+
+
+     <img height="225" width="150" src="../Back/img/<?=$row->image;?> " alt=""
+     class="rounded-0 card-img-top mg-responsive">
+      
+        <div class="card-body">
+        
+          <h3 class="pt20 pb20"><?=$row->nameP;?></h3>
+
+          <h4 class="pt20 pb20"><?=$row->price;?> DT</h4>
+
+      <p class="text-white">
+          <?=$row->description;?>
+          </p>
+          
+          
+          <input type="submit" value="Add to cart" class="btn btn-primary" name="add_to_cart"
+      style="margin-top: 10px; margin-bottom: 25px; width: 150px;">
+          
+        </div>
+      </div>
+    </div>
+    </div>
+   
+  
+          
+
+
+                                
+       
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br> 
+
+
+            <?php
+}
+}
+else
+{
+
+?>
+<tr>
+<td colspan="4"->No Record Found></td>
+</tr> 
+<?php
+
+}
+}
+?>
 
     <!-- book a table Section  -->
     
 
     <!-- BLOG Section  -->
-    <div
-      id="blog"
-      class="container-fluid bg-dark text-light py-5 text-center wow fadeIn"
-    >
-      <h2 class="section-title py-5">What everybody is getting</h2>
-      <div class="row justify-content-center">
-        <div class="col-sm-7 col-md-4 mb-5">
-          <ul
-            class="nav nav-pills nav-justified mb-3"
-            id="pills-tab"
-            role="tablist"
-          >
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                id="pills-home-tab"
-                data-toggle="pill"
-                href="#foods"
-                role="tab"
-                aria-controls="pills-home"
-                aria-selected="true"
-                >Foods</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                id="pills-profile-tab"
-                data-toggle="pill"
-                href="#juices"
-                role="tab"
-                aria-controls="pills-profile"
-                aria-selected="false"
-                >Drinks</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="tab-content" id="pills-tabContent">
-        <div
-          class="tab-pane fade show active"
-          id="foods"
-          role="tabpanel"
-          aria-labelledby="pills-home-tab"
-        >
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card bg-transparent border my-3 my-md-0">
-                <img
-                  src="assets/imgs/blog-1.jpg"
-                  alt="template by DevCRID http://www.devcrud.com/"
-                  class="rounded-0 card-img-top mg-responsive"
-                />
-                <div class="card-body">
-                  <h1 class="text-center mb-4">
-                    <a href="#" class="badge badge-primary">4.5dt</a>
-                  </h1>
-                  <h4 class="pt20 pb20">Tranche de pizza</h4>
-                  <p class="text-white">
-                    Le secret d'une pizza réussie réside avant tout dans la
-                    qualité de sa pâte. Composée de produits 100% bio.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card bg-transparent border my-3 my-md-0">
-                <img
-                  src="assets/imgs/blog-2.jpg"
-                  alt="template by DevCRID http://www.devcrud.com/"
-                  class="rounded-0 card-img-top mg-responsive"
-                />
-                <div class="card-body">
-                  <h1 class="text-center mb-4">
-                    <a href="#" class="badge badge-primary">3.5dt</a>
-                  </h1>
-                  <h4 class="pt20 pb20">Soufflé</h4>
-                  <p class="text-white">
-                    Une magnifique recette de Soufflés genre Sandwichs, à base
-                    d'une pâte super légère et moelleuse et une farce de blanc
-                    de poulet, oignons et fromages.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card bg-transparent border my-3 my-md-0">
-                <img
-                  src="assets/imgs/blog-3.jpg"
-                  alt="template by DevCRID http://www.devcrud.com/"
-                  class="rounded-0 card-img-top mg-responsive"
-                />
-                <div class="card-body">
-                  <h1 class="text-center mb-4">
-                    <a href="#" class="badge badge-primary">4dt</a>
-                  </h1>
-                  <h4 class="pt20 pb20">Sandwich au Jambon</h4>
-                  <p class="text-white">
-                    Deux tranches de très bon pain, des ingrédients frais...
-                    jambon, fromage, crudités, sauces, condiments... et c'est
-                    prêt !
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="tab-pane fade"
-          id="juices"
-          role="tabpanel"
-          aria-labelledby="pills-profile-tab"
-        >
-          <div class="row">
-            <div class="col-md-4 my-3 my-md-0">
-              <div class="card bg-transparent border">
-                <img
-                  src="assets/imgs/blog-4.jpg"
-                  alt="template by DevCRID http://www.devcrud.com/"
-                  class="rounded-0 card-img-top mg-responsive"
-                />
-                <div class="card-body">
-                  <h1 class="text-center mb-4">
-                    <a href="#" class="badge badge-primary">1.4dt</a>
-                  </h1>
-                  <h4 class="pt20 pb20">Café Direct</h4>
-                  <p class="text-white">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Culpa provident illum officiis fugit laudantium voluptatem
-                    sit iste delectus qui ex.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 my-3 my-md-0">
-              <div class="card bg-transparent border">
-                <img
-                  src="assets/imgs/blog-5.jpg"
-                  alt="template by DevCRID http://www.devcrud.com/"
-                  class="rounded-0 card-img-top mg-responsive"
-                />
-                <div class="card-body">
-                  <h1 class="text-center mb-4">
-                    <a href="#" class="badge badge-primary">1dt</a>
-                  </h1>
-                  <h4 class="pt20 pb20">Déli'o menthe</h4>
-                  <p class="text-white">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Culpa provident illum officiis fugit laudantium voluptatem
-                    sit iste delectus qui ex.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 my-3 my-md-0">
-              <div class="card bg-transparent border">
-                <img
-                  src="assets/imgs/blog-6.jpg"
-                  alt="template by DevCRID http://www.devcrud.com/"
-                  class="rounded-0 card-img-top mg-responsive"
-                />
-                <div class="card-body">
-                  <h1 class="text-center mb-4">
-                    <a href="#" class="badge badge-primary">2dt</a>
-                  </h1>
-                  <h4 class="pt20 pb20">Jus d'orange</h4>
-                  <p class="text-white">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Culpa provident illum officiis fugit laudantium voluptatem
-                    sit iste delectus qui ex.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
     <!-- REVIEWS Section  -->
     <div
@@ -377,8 +382,8 @@ include ('header.php');
         </div>
         <div class="col-md-4 my-3 my-md-0">
           <div class="testmonial-card">
-            <h3 class="testmonial-title">Saloun Ben Yahya</h3>
-            <h6 class="testmonial-subtitle">Professeuse</h6>
+            <h3 class="testmonial-title">Mahdi Zalila</h3>
+            <h6 class="testmonial-subtitle">Enseignant</h6>
             <div class="testmonial-body">
               <p>
                 Can't believe how organized and well made this interface is.
@@ -388,7 +393,7 @@ include ('header.php');
         </div>
         <div class="col-md-4 my-3 my-md-0">
           <div class="testmonial-card">
-            <h3 class="testmonial-title">Rayen Fathallah</h3>
+            <h3 class="testmonial-title">Amen Allah Laouini</h3>
             <h6 class="testmonial-subtitle">Étudiant</h6>
             <div class="testmonial-body">
               <p>Simple, fast and clean. This is a big step for our school.</p>
@@ -427,6 +432,7 @@ include ('header.php');
         </div>
       </div>
     </div>
+
 
     <!-- page footer  -->
     <div

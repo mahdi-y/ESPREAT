@@ -1,26 +1,18 @@
 <?php
 
-class config
-{
-    private static $pdo = null;
+$port = "3307";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "espreat";
+try {
+$conn = new PDO("mysql:host=$servername;dbname=$database;port=$port",$username,$password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//echo "connected successfully";
 
-    public static function getConnexion()
-    {
-        if (!isset(self::$pdo)) {
-            try {
-                self::$pdo = new PDO(
-                    'mysql:host=localhost;dbname=espreat',
-                    'root',
-                    '',
-                    [
-                        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-                    ]
-                );
-            } catch (Exception $e) {
-                die('Erreur: ' . $e->getMessage());
-            }
-        }
-        return self::$pdo;
-    }
+} catch (PDOException $e) {
+    echo "connection failed" . $e->getMessage();
 }
+
+
+?>
