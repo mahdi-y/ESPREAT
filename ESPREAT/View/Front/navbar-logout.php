@@ -24,7 +24,7 @@
             <a class="nav-link" href="#gallary">Gallary</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="produit.php">Products</a>
+            <a class="nav-link" href="listproduct.php">Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="orders.php">Orders</a>

@@ -72,16 +72,27 @@ $sort_option = "";
       if($select_cart->rowCount() > 0){
          while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)){
    ?>
-   <div class="sub-box" style="float: left; margin-right: 30px; overflow: hidden; border: 2px solid #575a5e; padding: 16px; background-color: #575a5e; border-radius: 10px; margin-top: -90px;">
+   <center>
+   <div class="sub-box" style="float: left; margin-right: 30px; overflow: hidden; border: 2px solid #575a5e; padding: 16px; background-color: #575a5e; border-radius: 10px; margin-top: -90px; text-align:center;">
    <form action="" method="post"  autocomplete="off">
       <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
-      <div class="name" style="text-align: center; font-size: 20px;"><?= $fetch_cart['name']; ?></div>
-         <div class="price" style="text-align: center; margin-bottom: 10px; font-size: 20px;"><?= $fetch_cart['price']; ?>dt</div>
-         <input style="height: 40px; width: 80px; border-color: #6c757d;" type="number" name="quantity" class="quantity form-control form-control-lg custom-form-control col-md-5" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="<?= $fetch_cart['quantity']; ?>">
-         <button type="submit" class="btn btn-secondary" name="update_quantity" style="margin-left: 80px; margin-top: -70px;">update</button>
+      
+      <div>
+      <img height="180" width="300" src="../Back/img/<?=$fetch_cart['image'];?> " alt=""
+     >
+         </div>
+      <div class="name" style="text-align: center; font-size: 30px;"><?= $fetch_cart['name']; ?></div>
+      
+         <div class="price" style="text-align: center; margin-bottom: 10px; font-size: 25px;"><?= $fetch_cart['price']; ?>dt</div>
+         <div>
+      <p ><?=$fetch_cart ['description'];?></p>
+         </div>
+         <input style="height: 40px; width: 80px; border-color: #6c757d;margin-left: 35px;" type="number" name="quantity" class="quantity form-control form-control-lg custom-form-control col-md-5" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="<?= $fetch_cart['quantity']; ?>">
+         <button type="submit" class="btn btn-secondary" name="update_quantity" style="margin-left: 160px; margin-top: -70px;">update</button>
       <div class="sub-total" style="text-align: center; margin-top: -12px; font-size: 20px; margin-bottom: 12px;"> sub total : <span><?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?>dt</span> </div>
-      <input style="margin-left: 25px;" type="submit" value="delete item" onclick="return confirm('delete this from cart?');" class="btn btn-danger" name="delete">
+      <input style="margin: auto;" type="submit" value="delete item" onclick="return confirm('delete this from cart?');" class="btn btn-danger" name="delete">
       </div>
+         </center>
    </form>
    <?php
    $grand_total += $sub_total;

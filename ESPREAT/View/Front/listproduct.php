@@ -1,11 +1,24 @@
 <?php
 include '../../config.php';
-include 'header.php';
+
+include 'connect.php';
 ?>
 
-<?php include('navbar.php'); ?>
+<?php
+session_start();
+include ('connect.php');
+if(!isset($_SESSION["identifiant"])){
+    header("location:login.php");
+}
+
+$user_id = $_SESSION['identifiant'];
 
 
+include 'header.php';
+include('navbar-logout.php');
+include('insert_cart.php'); 
+?>
+    
     
   <!--<p>Translate this page in your preferred language:</p>-->
 <div id="google_translate_element"></div> 
@@ -149,7 +162,7 @@ foreach($result as $row)
 {
 
 ?>
-
+<form action="" method="post" class="box" autocomplete="off">
 
 <div class="tab-content" id="pills-tabContent">
 <div
@@ -165,26 +178,37 @@ foreach($result as $row)
       <div class="card bg-transparent border my-3 my-md-0">
 
       <div class="container">
+      
+      <input type="hidden" name="pid" value="<?=$row->idP;?>">
+      <input type="hidden" name="name" value="<?=$row->nameP;?>">
+      <input type="hidden" name="price" value="<?=$row->price;?>">
+      <input type="hidden" name="image" value="<?=$row->image;?>">
+      <input type="hidden" name="description" value="<?=$row->description;?>">
 
-
-     <img height="300" width="345" src="../Back/img/<?=$row->image;?> " alt=""
+  
+        <div class="card-body">
+        <img height="225" width="150" src="../Back/img/<?=$row->image;?> " alt=""
      class="rounded-0 card-img-top mg-responsive">
       
-        <div class="card-body">
-         <h1 class="text-center mb-4">
-            <a href="#" class="badge badge-primary"><?=$row->price;?> DT</a>
-          </h1>
-          <h4 class="pt20 pb20"><?=$row->nameP;?></h4>
+          <h3 class="pt20 pb20"><?=$row->nameP;?></h3>
+
+          <h4 class="pt20 pb20"><?=$row->price;?> DT</h4>
+
       <p class="text-white">
           <?=$row->description;?>
           </p>
+
+          <input style=" text-align: center;border-color: #6c757d; width: fit-content; margin-top: 25px; margin-left: 40px;" type="number" name="quantity" class="form-control form-control-lg custom-form-control col-md-5 " min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
          
+          <input type="submit" value="Add to cart" class="btn btn-primary" name="add_to_cart"
+      style="margin-top: 10px; margin-bottom: 25px; width: 150px;">
           
         </div>
       </div>
     </div>
     </div>
    
+</form>
   
           
 
@@ -239,7 +263,7 @@ foreach($result as $row)
 {
 
 ?>
-
+<form action="" method="post" class="box" autocomplete="off">
 
 <div class="tab-content" id="pills-tabContent">
 <div
@@ -255,27 +279,38 @@ foreach($result as $row)
       <div class="card bg-transparent border my-3 my-md-0">
 
       <div class="container">
+      
+      <input type="hidden" name="pid" value="<?=$row->idP;?>">
+      <input type="hidden" name="name" value="<?=$row->nameP;?>">
+      <input type="hidden" name="price" value="<?=$row->price;?>">
+      <input type="hidden" name="image" value="<?=$row->image;?>">
+      <input type="hidden" name="description" value="<?=$row->description;?>">
 
 
-     <img height="300" width="345" src="../Back/img/<?=$row->image;?> " alt=""
+     <img height="225" width="150" src="../Back/img/<?=$row->image;?> " alt=""
      class="rounded-0 card-img-top mg-responsive">
       
         <div class="card-body">
-         <h1 class="text-center mb-4">
-            <a href="#" class="badge badge-primary"><?=$row->price;?> DT</a>
-          </h1>
-          <h4 class="pt20 pb20"><?=$row->nameP;?></h4>
+        
+          <h3 class="pt20 pb20"><?=$row->nameP;?></h3>
+
+          <h4 class="pt20 pb20"><?=$row->price;?> DT</h4>
+
       <p class="text-white">
           <?=$row->description;?>
           </p>
+
+          <input style=" text-align: center;border-color: #6c757d; width: fit-content; margin-top: 25px; margin-left: 40px;" type="number" name="quantity" class="form-control form-control-lg custom-form-control col-md-5 " min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
          
+          <input type="submit" value="Add to cart" class="btn btn-primary" name="add_to_cart"
+      style="margin-top: 10px; margin-bottom: 25px; width: 150px;">
           
         </div>
       </div>
     </div>
     </div>
    
-  
+</form>
           
 
 
