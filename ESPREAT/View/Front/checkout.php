@@ -61,7 +61,7 @@ if(isset($_POST['order'])){
 
 <section class="checkout-orders" style="margin-top: 250px; margin-left: 100px;">
 
-   <form action="" method="POST">
+   <form action="" method="POST" autocomplete="off">
 
    <h3>your orders</h3>
 

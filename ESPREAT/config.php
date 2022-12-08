@@ -1,10 +1,10 @@
 <?php
 
-$port = "3307";
+$port = "3306";
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "espreat";
+$database = "espreat_m";
 try {
 $conn = new PDO("mysql:host=$servername;dbname=$database;port=$port",$username,$password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

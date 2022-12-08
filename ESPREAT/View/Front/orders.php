@@ -67,7 +67,27 @@ $user_id = $_SESSION["identifiant"];
    </div>
 
 </section>
-
+<div
+      class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center "
+      style="margin-top: 50px;"
+    >
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>EMAIL US</h3>
+          <p class="text-muted">contact@espreat.tn</p>
+        </div>
+        <div class="col-sm-4">
+          <h3>CALL US</h3>
+          <p class="text-muted">(216) 70-255-255</p>
+        </div>
+        <div class="col-sm-4">
+          <h3>FIND US</h3>
+          <p class="text-muted">
+            2083 Cebalat Ben Ammar ST Fethi Zouhir, Tunis
+          </p>
+        </div>
+      </div>
+    </div>
 
 
 

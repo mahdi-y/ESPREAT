@@ -51,7 +51,7 @@ if(isset($_GET['delete'])){
       if($select_orders->rowCount() > 0){
          while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
    ?>
-   <div class="box" style="margin-top: 45px;margin-left: 50px; float: left;border: 2px solid #191c24; padding: 28px !important; border-radius: 10px; display: block; background-color: #191c24; position: relative; text-align: center;">
+   <div class="box" style="margin-top: 45px;margin-left: 50px; float: left;border: 2px solid #191c24; padding: 28px; border-radius: 10px; display: block; background-color: #191c24; position: relative; text-align: center; width: 320px; margin-bottom: 25px;">
       <p> Costumer id : <span><?= $fetch_orders['user_id']; ?></span> </p>
       <p> placed on : <span><?= $fetch_orders['placed_on']; ?></span> </p>
       <p> number : <span><?= $fetch_orders['number']; ?></span> </p>

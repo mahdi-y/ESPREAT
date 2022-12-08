@@ -38,23 +38,22 @@ if(isset($_POST['update_quantity'])){
 
  <form action="" method="GET">
 
-<div class="" style="margin-top: 100px ; margin-left: 110px;">
-                  <div class="col-md-4">
+<div class="" style="margin-top: 150px ; margin-left: 170px;">
+                  <div class="col-md-10">
                      <div class="input-group mb-3">
                         <select name="sort_numeric" class="form-control" >
                         <option value="">Select Option</option>
                         <option value="low-high"<?php if (isset($_GET['sort_numeric']) && $_GET ['sort_numeric']=="low-high" ) {echo "selected";}?>>Low - High</option>
                         <option value="high-low"<?php if (isset($_GET['sort_numeric']) && $_GET ['sort_numeric']=="high-low" ) {echo "selected";}?>>High - Low</option>
   </select>
-  <button type ="submit" class="btn btn-primary btn-sm float-end"style="margin-left: 10px;">Filter</
-  </button>
+  <button type ="submit" class="btn btn-primary"style="margin-left: 10px;width: 10%;">Filter</button>
   </div>
   </div>
   </div>
 </form>
 
     <section class="" style="margin-left: 45px;">
-   <div class="container" style="margin-top: 140px; ">
+   <div class="container" style="margin-top: 40px; text-align: center;">
    <?php
 
 $sort_option = "";
@@ -73,7 +72,7 @@ $sort_option = "";
          while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)){
    ?>
    <center>
-   <div class="sub-box" style="float: left; margin-right: 30px; overflow: hidden; border: 2px solid #575a5e; padding: 16px; background-color: #575a5e; border-radius: 10px; margin-top: -90px; text-align:center;">
+   <div class="sub-box" style="float: left; margin-right: 30px; overflow: hidden; border: 2px solid #575a5e; padding: 16px; background-color: #575a5e; border-radius: 10px; margin-top: 25px; text-align:center; margin-bottom: 50px;">
    <form action="" method="post"  autocomplete="off">
       <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
       
@@ -101,12 +100,36 @@ $sort_option = "";
       echo '<p class="empty" style="margin-top: -100px ;margin-left: -75px; font-size: 25px; text-align: center; clear: both;">your cart is empty!</p>';
    }
    ?>
-   </div>
-      <div class="" style="clear: both; margin-left: 90px;margin-top: 300px; display: inline-block;">
-      <p style="font-size: 24px; margin-bottom: 2px;">grand total : <span><?= $grand_total; ?>dt</span></p>
-      <a href="produit.php" class="btn btn-success text-white">continue shopping</a>
+   
+      <div class="" style="clear: both;  margin-left: auto;margin-top: 500px;">
+      <p style="font-size: 24px; margin-bottom: 15px;">grand total : <span><?= $grand_total; ?>dt</span></p>
+      <a href="listproduct.php" class="btn btn-success text-white">continue shopping</a>
       <a href="cart.php?delete_all" class="btn btn-danger text-white <?= ($grand_total > 1)?'':'disabled'; ?>" onclick="return confirm('delete all from cart?');">delete all item</a>
       <a href="checkout.php" class="btn btn-secondary<?= ($grand_total > 1)?'':'disabled'; ?>">proceed to checkout</a>
       </div>
+      </div>
 </section>
+<br>
+<br>
+<div
+      class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center "
+      style="margin-top: 50px;"
+    >
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>EMAIL US</h3>
+          <p class="text-muted">contact@espreat.tn</p>
+        </div>
+        <div class="col-sm-4">
+          <h3>CALL US</h3>
+          <p class="text-muted">(216) 70-255-255</p>
+        </div>
+        <div class="col-sm-4">
+          <h3>FIND US</h3>
+          <p class="text-muted">
+            2083 Cebalat Ben Ammar ST Fethi Zouhir, Tunis
+          </p>
+        </div>
+      </div>
+    </div>
 </html>

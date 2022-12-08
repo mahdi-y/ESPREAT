@@ -1,9 +1,9 @@
 <?php
-$port = "3307";
+$port = "3306";
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "espreat";
+$database = "espreat_m";
 try {
 $db = new PDO("mysql:host=$servername;dbname=$database;port=$port",$username,$password);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
