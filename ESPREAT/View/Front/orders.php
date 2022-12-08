@@ -87,7 +87,7 @@ $user_id = $_SESSION["identifiant"];
           </p>
         </div>
       </div>
-    </div>
+    </div> 
 
 
 
