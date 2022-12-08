@@ -32,8 +32,9 @@
                             <label for="floatingText">montant</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="floatingText" placeholder="(0:oui , 1:non)" name="anonymat">
-                            <label for="floatingText">anonymat(1:non ; 0:oui)</label>
+                        <label for="floatingText">anonymat</label>
+                            <input type="checkbox" value="1" name="anonymat">
+                            
                         </div>
                         
                         <div class="d-flex align-items-center justify-content-between mb-4">
@@ -41,7 +42,7 @@
                        
                         <button type="submit" name="submit" class="btn btn-primary py-3 w-100 mb-4">add donation</button>
                         <input type="hidden" name="button_pressed" value="1" />
-
+                        
                     
 
                         

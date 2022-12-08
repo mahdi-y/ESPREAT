@@ -170,7 +170,7 @@
                                     {
                                         foreach($result as $row)
                                         {
-                                            if($row->anonymat == 1)
+                                            if($row->anonymat == 0)
                                             {
                                             ?>
                                              
