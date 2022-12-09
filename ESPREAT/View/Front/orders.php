@@ -1,16 +1,10 @@
 <?php
-
 include 'connect.php';
-
 session_start();
-
 if(!isset($_SESSION["identifiant"])){
     header("location:login.php");
 }
-
 $user_id = $_SESSION["identifiant"];
-
-
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +42,7 @@ $user_id = $_SESSION["identifiant"];
          if($select_orders->rowCount() > 0){
             while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
    ?>
-   <div class="box" style="border: 3px solid #575a5e; padding: 20px; width: 30%; float: left; margin-right: 25px;margin-bottom: 25px; background-color: #575a5e; border-radius: 10px;">
+   <div class="box" style="border: 3px solid #575a5e; padding: 20px; width: 500px; float: left; margin-right: 25px;margin-bottom: 25px; background-color: #575a5e; border-radius: 10px;">
       <p>placed on : <span><?= $fetch_orders['placed_on']; ?></span></p>
       <p>number : <span><?= $fetch_orders['number']; ?></span></p>
       <p>bloc : <span><?= $fetch_orders['bloc']; ?></span></p>
@@ -63,10 +57,11 @@ $user_id = $_SESSION["identifiant"];
       }
       }
    ?>
-
    </div>
-
 </section>
+
+
+
 <div
       class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center "
       style="margin-top: 50px;"

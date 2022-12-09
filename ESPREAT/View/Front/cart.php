@@ -88,7 +88,7 @@ $sort_option = "";
          </div>
          <input style="height: 40px; width: 80px; border-color: #6c757d;margin-left: 35px;" type="number" name="quantity" class="quantity form-control form-control-lg custom-form-control col-md-5" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="<?= $fetch_cart['quantity']; ?>">
          <button type="submit" class="btn btn-secondary" name="update_quantity" style="margin-left: 160px; margin-top: -70px;">update</button>
-      <div class="sub-total" style="text-align: center; margin-top: -12px; font-size: 20px; margin-bottom: 12px;"> sub total : <span><?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?>dt</span> </div>
+      <div class="sub-total" style="text-align: center; margin-top: -12px; font-size: 20px; margin-bottom: 12px;"> sub total : <span><?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?>dt</span></div>
       <input style="margin: auto;" type="submit" value="delete item" onclick="return confirm('delete this from cart?');" class="btn btn-danger" name="delete">
       </div>
          </center>

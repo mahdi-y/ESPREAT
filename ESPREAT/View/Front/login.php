@@ -25,7 +25,7 @@ if (isset($_POST["login"])){
     .wrapper{
         position: absolute;
         top: 40%;
-        left: 39%;
+        left: 43%;
         padding: 10px;
         width: 300px;
         height: 250px;

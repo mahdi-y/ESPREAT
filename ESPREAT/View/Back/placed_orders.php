@@ -1,4 +1,3 @@
-
 <?php
 
 include 'connect.php';
@@ -26,38 +25,29 @@ if(isset($_GET['delete'])){
 <?php include ('header.php'); ?>
 <?php include('navbar.php'); ?>
 
-
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
    <link rel="stylesheet" href="/css/style.css">
-
 
 <body>
 
-
-   
-
-
-
-
-
-<h1 class="heading" style="margin-left : 350px; margin-top: 40px;">Placed Orders</h1>
+<h1 class="heading" style="margin-left : 40%; margin-top: 40px;">Placed Orders</h1>
 
 <div class="box-container" style="margin-left : 100px; align-text: center;">
 
    <?php
+   $total = 0;
       $select_orders = $db->prepare("SELECT * FROM `orders`");
       $select_orders->execute();
       if($select_orders->rowCount() > 0){
          while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
    ?>
-   <div class="box" style="margin-top: 45px;margin-left: 50px; float: left;border: 2px solid #191c24; padding: 28px; border-radius: 10px; display: block; background-color: #191c24; position: relative; text-align: center; width: 320px; margin-bottom: 25px;">
+   <div class="box" style="margin-top: 45px;margin-left: 25px; float: left;border: 2px solid #191c24; padding: 28px; border-radius: 10px; display: block; background-color: #191c24; position: relative; text-align: center; width: 320px; margin-bottom: 25px;">
       <p> Costumer id : <span><?= $fetch_orders['user_id']; ?></span> </p>
       <p> placed on : <span><?= $fetch_orders['placed_on']; ?></span> </p>
       <p> number : <span><?= $fetch_orders['number']; ?></span> </p>
       <p> bloc : <span><?= $fetch_orders['bloc']; ?></span> </p>
       <p> total products : <span><?= $fetch_orders['total_products'];?></span></p>
-      <p> total price : <span><?= $fetch_orders['total_price']; ?>dt</span> </p>
+      <p> total price : <span><?= $total_commandes = ($fetch_orders['total_price']); ?>dt</span> </p>
       <form action="" method="post">
          <input type="hidden" name="order_id" value="<?= $fetch_orders['id'];?>">
          <select name="payment_status" class="form-control form-control-sm custom-form-control col-md-1" style="width: 155px; text-align: center; background-color: #2b303e ; border-color: #2b303e; margin: auto; margin-bottom: 15px;">
@@ -73,6 +63,7 @@ if(isset($_GET['delete'])){
       </form>
    </div>
    <?php
+         $total += $total_commandes;
          }
       }else{
          echo '<p class="empty">no orders placed yet!</p>';
@@ -82,6 +73,9 @@ if(isset($_GET['delete'])){
 </div>
 </section>
 
+<div class="lo" style="clear: both; border: 2px  solid  #191c24; padding: 8px; width: 80%;  text-align: center; margin-bottom: 25px; display: block; margin-top: 25px; margin-left: 150px; border-radius: 10px;">
+<p style="font-size: 24px;">Total des commandes : <span><?= $total; ?>dt</span></p>
+</div>
 
 
 
